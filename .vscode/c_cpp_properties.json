@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "./pin-3.20-98437-gf02b61307-gcc-linux/source/**",
+                "./pin-3.20-98437-gf02b61307-gcc-linux/extras/**",
+                "./libdft64/src"
+            ],
+            // symbol_linux.PH is recognized as a header file.
+            "forcedInclude": [
+                "/pin-3.20-98437-gf02b61307-gcc-linux/source/include/pin/gen/symbol_linux.PH"
+            ],
+            // To disable `identifier "PIN_InitSymbols" is undefined` error.
+            // TARGET_LINUX specified in /pin-3.20*/source/tools/Config/makefile.unix.config.
+            // (see /pin-3.20*/source/include/pin/gen/symbol_linux.PH")
+            "defines": [
+                "TARGET_LINUX"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
