@@ -27,7 +27,6 @@ if [ ! -d libdft64 ]; then
     git clone https://github.com/AngoraFuzzer/libdft64
 fi
 cd libdft64
-make -j"$(nproc)"
+make -j"$(nproc)" || true
 
 echo -e "\n\nRun \033[1msource env.init\033[0m\n"
-
