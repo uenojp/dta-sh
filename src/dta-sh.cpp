@@ -1,9 +1,9 @@
+#include <set>
+
 // Intel Pin.
 #include "pin.H"
 
 // libdft64
-#include <set>
-
 #include "branch_pred.h"
 #include "libdft_api.h"
 #include "syscall_desc.h"
