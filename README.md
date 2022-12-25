@@ -1,13 +1,38 @@
-## 動的テイント解析を用いた悪性シェルスクリプトによる情報漏洩の検知
+# 動的テイント解析を用いた悪性シェルスクリプトによる情報漏洩の検知
 
-### Install
-```sh
-# Intel Pinとlibdft64のインストール
-./setup.sh
-# 環境変数などの設定
-source ./env.init
+## クイックスタート
+### 依存関係をインストール
+`./setup.sh`
 
-# libdf64の動作確認
-cd libdft64/tools && make test_mini
+### PIN_ROOTを設定
+`source ./env.init`
+
+### dta-shの例を実行
+```
+python3 server.py &
+cd src
+make
+make test
 ```
 
+## FAQ
+### Makefile:18: /Config/makefile.default.rules: No such file or directory
+`PIN_ROOT`が設定されておらず、PinのMakefileが見つからない。
+Pinのディレクトリを環境変数経由で教えてやる。
+
+`source env.init`
+
+### dta-sh.cpp:58:15: error: unused variable 'sockfd' [-Werror=unused-variable]
+Pintoolのコンパイルに`-Werror`が有効なため、WarningがすべてErrorとして扱われる。
+Pintoolのコンパイルオプションは`pin-3.20-98437-gf02b61307-gcc-linux/source/tools/Config/makefile.unix.config`で定義されているため、`-Werror`を削除することでコンパイルが通る（WarningはWarningとして扱われる）。
+
+```diff
+- TOOL_CXXFLAGS_NOOPT := -Wall -Werror -Wno-unknown-pragmas -DPIN_CRT=1
++ TOOL_CXXFLAGS_NOOPT := -Wall -Wno-unknown-pragmas -DPIN_CRT=1
+```
+
+### likely()/unlikely()
+条件分岐を最適化するためにコンパイラに与えるヒント。
+`libdft64/src/branch_pred.h`で定義されている。
+
+ref. https://stackoverflow.com/questions/109710/how-do-the-likely-unlikely-macros-in-the-linux-kernel-work-and-what-is-their-ben
