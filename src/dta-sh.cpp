@@ -1,8 +1,10 @@
 // 2022 Takahiro Ueno uenotakahiro.jp@gmail.com
 //
 // Refered to
-// - libdft-dta.cpp (https://github.com/AngoraFuzzer/libdft64/blob/066c9d8b3eaa7eeb353dc51771948f3dc8062f95/tools/libdft-dta.cpp)
-// - dta-dataleak.cpp (example code for chapter11 of https://practicalbinaryanalysis.com/)
+// - libdft-dta.cpp
+//      https://github.com/AngoraFuzzer/libdft64/blob/066c9d8b3eaa7eeb353dc51771948f3dc8062f95/tools/libdft-dta.cpp
+// - dta-dataleak.cpp
+//      example code for chapter11 of https://practicalbinaryanalysis.com/
 
 #include <set>
 
@@ -31,6 +33,10 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
     const int fd = (const int)ctx->ret;
     const char* pathname = (const char*)ctx->arg[SYSCALL_ARG1];
 
+    if (unlikely(fd < 0)) {
+        return;
+    }
+
 #ifdef DEBUG
     fprintf(stderr, "post_openat_hook: open %s at fd %d\n", pathname, fd);
 #endif
@@ -49,7 +55,7 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     const int fd = (int)ctx->arg[SYSCALL_ARG0];
     const void* buf = (void*)ctx->arg[SYSCALL_ARG1];
 
-    if (unlikely(nread) <= 0) {
+    if (unlikely(nread <= 0)) {
         return;
     }
 
