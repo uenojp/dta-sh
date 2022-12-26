@@ -1,3 +1,9 @@
+// 2022 Takahiro Ueno uenotakahiro.jp@gmail.com
+//
+// Refered to
+// - libdft-dta.cpp (https://github.com/AngoraFuzzer/libdft64/blob/066c9d8b3eaa7eeb353dc51771948f3dc8062f95/tools/libdft-dta.cpp)
+// - dta-dataleak.cpp (example code for chapter11 of https://practicalbinaryanalysis.com/)
+
 #include <set>
 
 // Intel Pin
@@ -14,11 +20,13 @@ extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static tag_traits<tag_t>::type tag = 1;
 static std::set<int> fdset;
 
+// alert aborts the program, called when a data leak is detected.
 void alert() {
     fprintf(stderr, "\n\n!!!!ABORT!!!! detected data leak\n\n");
     exit(42);
 }
 
+// post_openat_hook pre-hooks openat(2) to save `fd` of opend files.
 static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
     const int fd = (const int)ctx->ret;
     const char* pathname = (const char*)ctx->arg[SYSCALL_ARG1];
@@ -34,6 +42,8 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
     fdset.insert(fd);
 }
 
+// taint source
+// post_read_hook pre-hooks read(2) to taint the argument `buf`.
 static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     const ssize_t nread = (ssize_t)ctx->ret;
     const int fd = (int)ctx->arg[SYSCALL_ARG0];
@@ -54,6 +64,8 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 }
 
+// taint sink
+// pre_sendto_hook post-hooks sendto(2) to check if the argument `buf` is tainted.
 static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     const int sockfd = (int)ctx->arg[SYSCALL_ARG0];
     const void* buf = (void*)ctx->arg[SYSCALL_ARG1];
@@ -72,6 +84,7 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 }
 
+// post_close_hook post-hooks close(2) to delete fd saved in post_openat_hook.
 static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
     const int ret = (int)ctx->ret;
     const int fd = (int)ctx->arg[SYSCALL_ARG0];
