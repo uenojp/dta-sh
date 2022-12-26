@@ -1,6 +1,6 @@
 #include <set>
 
-// Intel Pin.
+// Intel Pin
 #include "pin.H"
 
 // libdft64
@@ -27,7 +27,7 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
     fprintf(stderr, "post_openat_hook: open %s at fd %d\n", pathname, fd);
 #endif
 
-    if (strstr(pathname, ".so") != NULL || strstr(pathname, ".so.")) {
+    if (strstr(pathname, ".so") != NULL || strstr(pathname, ".so.") != NULL) {
         return;
     }
 
