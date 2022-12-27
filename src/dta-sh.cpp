@@ -14,15 +14,28 @@
 #include "libdft_api.h"
 #include "syscall_desc.h"
 
-// #define DEBUG
+#define DEBUG
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static tag_traits<tag_t>::type tag = 1;
-static std::set<int> fdset;
+static std::map<int, std::string> fd2filename;
+static std::map<tag_traits<tag_t>::type, int> tag2fd;
 
 // alert aborts the program, called when a data leak is detected.
-void alert() {
-    fprintf(stderr, "\n\n!!!!ABORT!!!! detected data leak\n\n");
+void alert(tag_traits<tag_t>::type t) {
+    int fd = tag2fd[t];
+    std::string filename = fd2filename[fd];
+    printf("tag %ld, fd %d, filename %s\n", t, fd, filename.c_str());
+
+    for (auto& entry : tag2fd) {
+        printf("tag %d fd %d\n", entry.first, entry.second);
+    }
+
+    for (auto& entry : fd2filename) {
+        printf("fd %d name %s\n", entry.first, entry.second);
+    }
+
+    fprintf(stderr, "\n\n!!!!ABORT!!!! detected data leak '%s'\n\n", filename.c_str());
     exit(42);
 }
 
@@ -35,11 +48,14 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
     fprintf(stderr, "post_openat_hook: open %s at fd %d\n", pathname, fd);
 #endif
 
+    if (strcmp(pathname, "/usr/lib/ssl/openssl.cnf") != 0) {
+        return;
+    }
     if (strstr(pathname, ".so") != NULL || strstr(pathname, ".so.") != NULL) {
         return;
     }
 
-    fdset.insert(fd);
+    fd2filename.insert(std::make_pair(fd, std::string(pathname)));
 }
 
 // taint source
@@ -57,8 +73,9 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     fprintf(stderr, "post_read_hook: read %zd bytes from fd %d\n", nread, fd);
 #endif
 
-    if (fdset.find(fd) != fdset.end()) {
-        tagmap_setn((uintptr_t)buf, nread, tag);
+    if (fd2filename.find(fd) != fd2filename.end()) {
+        tagmap_setn((uintptr_t)buf, nread, tag++);
+        tag2fd.insert(std::make_pair(tag, fd));
     } else {
         tagmap_clrn((uintptr_t)buf, nread);
     }
@@ -78,8 +95,9 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     const uintptr_t start = (uintptr_t)buf;
     const uintptr_t end = (uintptr_t)buf + len;
     for (uintptr_t addr = start; addr <= end; addr++) {
-        if (tagmap_getb(addr) != 0) {
-            alert();
+        tag_traits<tag_t>::type t = tagmap_getb(addr);
+        if (t != 0) {
+            alert(t);
         }
     }
 }
@@ -97,8 +115,8 @@ static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
     fprintf(stderr, "post_close_hook: close %d\n", fd);
 #endif
 
-    if (likely(fdset.find(fd) != fdset.end())) {
-        fdset.erase(fd);
+    if (likely(fd2filename.find(fd) != fd2filename.end())) {
+        // fd2filename.erase(fd);
     }
 }
 
