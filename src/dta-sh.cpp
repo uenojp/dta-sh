@@ -20,6 +20,8 @@
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static tag_traits<tag_t>::type tag = 1;
+// fdset stores the fd's(file discripters) of opened files. The fd stored in fdset is the target of
+// tracking.
 static std::set<int> fdset;
 
 // alert aborts the program, called when a data leak is detected.
@@ -28,7 +30,7 @@ void alert() {
     exit(42);
 }
 
-// post_openat_hook pre-hooks openat(2) to save `fd` of opend files.
+// post_openat_hook pre-hooks openat(2) to save the fd of opend files.
 static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
     const int fd = (const int)ctx->ret;
     const char* pathname = (const char*)ctx->arg[SYSCALL_ARG1];
@@ -41,6 +43,8 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
     fprintf(stderr, "post_openat_hook: open %s at fd %d\n", pathname, fd);
 #endif
 
+    // Exclude files with '.so' and '.so.' in the filename since dynamic linked binaries loads
+    // shared libraries(.so) at runtime. Shared libraries do not need be taint.
     if (strstr(pathname, ".so") != NULL || strstr(pathname, ".so.") != NULL) {
         return;
     }
@@ -81,6 +85,7 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     fprintf(stderr, "pre_sendto_hook: send %zu bytes '%s' to sockfd %d\n", len, (char*)buf, sockfd);
 #endif
 
+    // Check if each byte between address buf and buf+len is tainted.
     const uintptr_t start = (uintptr_t)buf;
     const uintptr_t end = (uintptr_t)buf + len;
     for (uintptr_t addr = start; addr <= end; addr++) {
