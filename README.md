@@ -16,6 +16,8 @@ make test
 ```
 
 ## FAQ
+エラーに関するものは起きたエラーがそのままタイトル。
+
 ### Makefile:18: /Config/makefile.default.rules: No such file or directory
 `PIN_ROOT`が設定されておらず、PinのMakefileが見つからない。
 Pinのディレクトリを環境変数経由で教えてやる。
@@ -36,3 +38,10 @@ Pintoolのコンパイルオプションは`pin-3.20-98437-gf02b61307-gcc-linux/
 `libdft64/src/branch_pred.h`で定義されている。
 
 ref. https://stackoverflow.com/questions/109710/how-do-the-likely-unlikely-macros-in-the-linux-kernel-work-and-what-is-their-ben
+
+### curl: (7) Failed to connect to localhost port 9999 after 468 ms: Connection refused
+ローカルサーバが立っていない。
+サーバを立ててやる。`&`はバックグラウンド実行の意味（Bashの機能）。
+
+`python3 server.py &`
+
