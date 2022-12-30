@@ -84,3 +84,12 @@ makefile.rulesの`TOOL_ROOT`にビルドするツールのファイル名（の�
 詳細なビルドレシピは別の場所で定義されていて隠されている。
 例えば、dta-sh.cppというlibdft toolをビルドするためには`TOOL_ROOT := dta-sh`と定義する。
 するとmakeを実行するだけでobj-intel64/dta-sh.soというファイルが生成される。
+
+### コールバック関数のTHREADIDとは
+本ツールでは使わない。
+THREADIDはPinのスレッドが使用するデータの配列へのインデックス。
+ここでのスレッドはWinAPIのスレッドやPthreadsのスレッドではなく、Pinが管理するスレッド。
+
+> Pin also provides an analysis routine argument (IARG_THREAD_ID), which passes a Pin-specific thread ID for the calling thread. This ID is different from the O/S system thread ID, and is a small number starting at 0, which can be used as an index to an array of thread data or as the locking value to Pin user locks. See the example Instrumenting Threaded Applications for more information.
+
+ref. https://software.intel.com/sites/landingpage/pintool/docs/98650/Pin/doc/html/index.html#MT
