@@ -19,7 +19,7 @@
 // #define DEBUG
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
-static tag_traits<tag_t>::type tag = 1;
+static const tag_traits<tag_t>::type tag = 1;
 // fdset stores the fd's(file discripters) of opened files. The fd stored in fdset is the target of
 // tracking.
 static std::set<int> fdset;
@@ -55,9 +55,9 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
 // taint source
 // post_read_hook pre-hooks read(2) to taint the argument `buf`.
 static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
-    const ssize_t nread = (ssize_t)ctx->ret;
-    const int fd = (int)ctx->arg[SYSCALL_ARG0];
-    const void* buf = (void*)ctx->arg[SYSCALL_ARG1];
+    const ssize_t nread = (const ssize_t)ctx->ret;
+    const int fd = (const int)ctx->arg[SYSCALL_ARG0];
+    const void* buf = (const void*)ctx->arg[SYSCALL_ARG1];
 
     if (unlikely(nread <= 0)) {
         return;
@@ -77,17 +77,17 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
 // taint sink
 // pre_sendto_hook post-hooks sendto(2) to check if the argument `buf` is tainted.
 static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
-    const int sockfd = (int)ctx->arg[SYSCALL_ARG0];
-    const void* buf = (void*)ctx->arg[SYSCALL_ARG1];
-    const size_t len = (size_t)ctx->arg[SYSCALL_ARG2];
+    const int sockfd = (const int)ctx->arg[SYSCALL_ARG0];
+    const void* buf = (const void*)ctx->arg[SYSCALL_ARG1];
+    const size_t len = (const size_t)ctx->arg[SYSCALL_ARG2];
 
 #ifdef DEBUG
     fprintf(stderr, "pre_sendto_hook: send %zu bytes '%s' to sockfd %d\n", len, (char*)buf, sockfd);
 #endif
 
     // Check if each byte between address buf and buf+len is tainted.
-    const uintptr_t start = (uintptr_t)buf;
-    const uintptr_t end = (uintptr_t)buf + len;
+    const uintptr_t start = (const uintptr_t)buf;
+    const uintptr_t end = (const uintptr_t)buf + len;
     for (uintptr_t addr = start; addr <= end; addr++) {
         if (tagmap_getb(addr) != 0) {
             alert();
@@ -97,8 +97,8 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
 
 // post_close_hook post-hooks close(2) to delete fd saved in post_openat_hook.
 static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
-    const int ret = (int)ctx->ret;
-    const int fd = (int)ctx->arg[SYSCALL_ARG0];
+    const int ret = (const int)ctx->ret;
+    const int fd = (const int)ctx->arg[SYSCALL_ARG0];
 
     if (unlikely(ret < 0)) {
         return;
