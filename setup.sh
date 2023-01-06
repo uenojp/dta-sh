@@ -27,6 +27,7 @@ if [ ! -d libdft64 ]; then
     git clone https://github.com/AngoraFuzzer/libdft64
 fi
 cd libdft64
+git checkout 066c9d8b3eaa7eeb353dc51771948f3dc8062f95
 make -j"$(nproc)" || true
 
 # Set ptrace_scope as 0 for Intel Pin.
