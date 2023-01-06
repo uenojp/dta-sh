@@ -39,15 +39,15 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG
-    fprintf(stderr, "post_openat_hook: open %s at fd %d\n", pathname, fd);
-#endif
-
     // Exclude files with '.so' and '.so.' in the filename since dynamic linked binaries loads
     // shared libraries(.so) at runtime. Shared libraries do not need be taint.
     if (strstr(pathname, ".so") != NULL || strstr(pathname, ".so.") != NULL) {
         return;
     }
+
+#ifdef DEBUG
+    fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
+#endif
 
     fdset.insert(fd);
 }
@@ -64,13 +64,21 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 
 #ifdef DEBUG
-    fprintf(stderr, "post_read_hook: read %zd bytes from fd %d\n", nread, fd);
+    fprintf(stderr, "%-16s: read %zd bytes from fd %d\n", __FUNCTION__, nread, fd);
 #endif
 
     if (fdset.find(fd) != fdset.end()) {
         tagmap_setn((uintptr_t)buf, nread, tag);
+#ifdef DEBUG
+        fprintf(stderr, "%-16s: taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
+                (uintptr_t)buf + nread);
+#endif
     } else {
         tagmap_clrn((uintptr_t)buf, nread);
+#ifdef DEBUG
+        fprintf(stderr, "%-16s: clear taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
+                (uintptr_t)buf + nread);
+#endif
     }
 }
 
@@ -82,17 +90,24 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     const size_t len = (const size_t)ctx->arg[SYSCALL_ARG2];
 
 #ifdef DEBUG
-    fprintf(stderr, "pre_sendto_hook: send %zu bytes '%s' to sockfd %d\n", len, (char*)buf, sockfd);
+    fprintf(stderr, "%-16s: send %zu bytes '%s' to sockfd %d\n", __FUNCTION__, len, (char*)buf,
+            sockfd);
 #endif
 
     // Check if each byte between address buf and buf+len is tainted.
     const uintptr_t start = (const uintptr_t)buf;
     const uintptr_t end = (const uintptr_t)buf + len;
+#ifdef DEBUG
+    fprintf(stderr, "%-16s: check taint 0x%lx -- 0x%lx\n", __FUNCTION__, start, end);
+#endif
     for (uintptr_t addr = start; addr <= end; addr++) {
         if (tagmap_getb(addr) != 0) {
             alert();
         }
     }
+#ifdef DEBUG
+    fprintf(stderr, "%-16s: OK\n", __FUNCTION__);
+#endif
 }
 
 // post_close_hook post-hooks close(2) to delete fd saved in post_openat_hook.
@@ -105,7 +120,7 @@ static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 
 #ifdef DEBUG
-    fprintf(stderr, "post_close_hook: close %d\n", fd);
+    fprintf(stderr, "%-16s: close %d\n", __FUNCTION__, fd);
 #endif
 
     if (likely(fdset.find(fd) != fdset.end())) {
