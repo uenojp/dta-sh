@@ -67,6 +67,12 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     fprintf(stderr, "%-16s: read %zd bytes from fd %d\n", __FUNCTION__, nread, fd);
 #endif
 
+    // If the fd is to be tracked(= fdset contins fd), taint bytes from buf to buf+nread-1.
+    // Otherwise(= fdset do not contains fd), the memory area is overwritten even if it has been the
+    // target of tracing and is no longer the target of tracing, so clean taints from buf to
+    // buf+nread-1.
+    // Note that you should not clean taints in close callback function becasue the read data will
+    // continue to exist after it the file is closed.
     if (fdset.find(fd) != fdset.end()) {
         tagmap_setn((uintptr_t)buf, nread, tag);
 #ifdef DEBUG
