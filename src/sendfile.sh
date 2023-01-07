@@ -1,1 +1,5 @@
-curl -X POST -F f=@"/etc/passwd" localhost:9999
+#/bin/bash
+
+# cat /etc/passwd | curl -X POST -d @- localhost:9999
+seq 100 | curl -X POST -d @- localhost:9999
+# cat /etc/passwd | nl

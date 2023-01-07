@@ -151,6 +151,8 @@ int main(int argc, char** argv) {
     syscall_set_pre(&syscall_desc[__NR_sendto], pre_sendto_hook);
     syscall_set_post(&syscall_desc[__NR_close], post_close_hook);
 
+    fdset.insert(0);
+
     PIN_StartProgram();
 
     return 0;

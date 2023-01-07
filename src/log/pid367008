@@ -1,0 +1,24 @@
+[pid 367008] rt_sigprocmask(SIG_SETMASK, [CHLD],  <unfinished ...>
+[pid 367008] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid 367008] close(4)                   = 0
+[pid 367008] close(4 <unfinished ...>
+[pid 367008] <... close resumed>)       = -1 EBADF (Bad file descriptor)
+[pid 367008] rt_sigprocmask(SIG_BLOCK, NULL, [CHLD], 8) = 0
+[pid 367008] rt_sigprocmask(SIG_BLOCK, [INT TERM CHLD], [CHLD], 8) = 0
+[pid 367008] clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD <unfinished ...>
+[pid 367008] <... clone resumed>, child_tidptr=0x7faa1bf6ca10) = 367010
+[pid 367008] rt_sigprocmask(SIG_SETMASK, [CHLD],  <unfinished ...>
+[pid 367008] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid 367008] close(3 <unfinished ...>
+[pid 367008] <... close resumed>)       = 0
+[pid 367008] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 367008] <... rt_sigprocmask resumed>[CHLD], 8) = 0
+[pid 367008] rt_sigprocmask(SIG_SETMASK, [CHLD],  <unfinished ...>
+[pid 367008] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid 367008] rt_sigprocmask(SIG_BLOCK, [CHLD],  <unfinished ...>
+[pid 367008] <... rt_sigprocmask resumed>[CHLD], 8) = 0
+[pid 367008] rt_sigaction(SIGINT, {sa_handler=0x557b2966ddc0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7faa1bfb1520},  <unfinished ...>
+[pid 367008] <... rt_sigaction resumed>{sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7faa1bfb1520}, 8) = 0
+[pid 367008] wait4(-1,  <unfinished ...>
+[pid 367008] <... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 367009
+[pid 367008] wait4(-1,  <unfinished ...>
