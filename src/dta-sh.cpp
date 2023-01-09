@@ -16,7 +16,7 @@
 #include "libdft_api.h"
 #include "syscall_desc.h"
 
-// #define DEBUG
+#define DEBUG
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static const tag_traits<tag_t>::type tag = 1;

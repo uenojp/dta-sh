@@ -98,3 +98,7 @@ TOOL_LIBS += -L$(LIBDFT_PATH) -ldft
 INPUT_SCRIPT=sendfile.sh
 test: $(OBJDIR)/dta-sh$(PINTOOL_SUFFIX) /bin/bash
 	$(PIN) -follow-execv -t $< -- bash ${INPUT_SCRIPT}
+
+INPUT_SCRIPT=obf-sendfile-9.sh
+obf-test: $(OBJDIR)/dta-sh$(PINTOOL_SUFFIX) /bin/bash
+	$(PIN) -follow-execv -t $< -- bash ${INPUT_SCRIPT}
