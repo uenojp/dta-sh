@@ -74,6 +74,8 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     // Note that you should not clean taints in close callback function becasue the read data will
     // continue to exist after it the file is closed.
     if (fdset.find(fd) != fdset.end()) {
+        // NOTE: tagmap_setn taints [buf, buf+nread). Data at address buf+len is not tainted.
+        // see libdft64/src/tagmap.cpp
         tagmap_setn((uintptr_t)buf, nread, tag);
 #ifdef DEBUG
         fprintf(stderr, "%-16s: taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
@@ -106,7 +108,7 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
 #ifdef DEBUG
     fprintf(stderr, "%-16s: check taint 0x%lx -- 0x%lx\n", __FUNCTION__, start, end);
 #endif
-    for (uintptr_t addr = start; addr <= end; addr++) {
+    for (uintptr_t addr = start; addr < end; addr++) {
         if (tagmap_getb(addr) != 0) {
             alert();
         }
