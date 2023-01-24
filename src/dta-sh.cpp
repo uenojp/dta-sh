@@ -6,6 +6,8 @@
 // - dta-dataleak.cpp
 //      example code for chapter11 of https://practicalbinaryanalysis.com/
 
+#include "dta-sh.h"
+
 #include <set>
 
 // Intel Pin
@@ -16,7 +18,7 @@
 #include "libdft_api.h"
 #include "syscall_desc.h"
 
-// #define DEBUG
+#define DEBUG_PRINT
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static const tag_traits<tag_t>::type tag = 1;
@@ -45,8 +47,9 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
+#ifdef DEBUG_PRINT
+    // fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
+    DEBUG("open %s at fd %d", pathname, fd);
 #endif
 
     fdset.insert(fd);
@@ -63,8 +66,9 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: read %zd bytes from fd %d\n", __FUNCTION__, nread, fd);
+#ifdef DEBUG_PRINT
+    // fprintf(stderr, "%-16s: read %zd bytes from fd %d\n", __FUNCTION__, nread, fd);
+    DEBUG("read %zd bytes from fd %d", nread, fd);
 #endif
 
     // If the fd is to be tracked(= fdset contins fd), taint bytes from buf to buf+nread-1.
@@ -77,15 +81,17 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
         // NOTE: tagmap_setn taints [buf, buf+nread). Data at address buf+len is not tainted.
         // see libdft64/src/tagmap.cpp
         tagmap_setn((uintptr_t)buf, nread, tag);
-#ifdef DEBUG
-        fprintf(stderr, "%-16s: taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
-                (uintptr_t)buf + nread);
+#ifdef DEBUG_PRINT
+        // fprintf(stderr, "%-16s: taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
+        //         (uintptr_t)buf + nread);
+        DEBUG("taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
 #endif
     } else {
         tagmap_clrn((uintptr_t)buf, nread);
-#ifdef DEBUG
-        fprintf(stderr, "%-16s: clear taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
-                (uintptr_t)buf + nread);
+#ifdef DEBUG_PRINT
+        // fprintf(stderr, "%-16s: clear taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
+        //         (uintptr_t)buf + nread);
+        DEBUG("clear taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
 #endif
     }
 }
@@ -97,24 +103,27 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     const void* buf = (const void*)ctx->arg[SYSCALL_ARG1];
     const size_t len = (const size_t)ctx->arg[SYSCALL_ARG2];
 
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: send %zu bytes '%s' to sockfd %d\n", __FUNCTION__, len, (char*)buf,
-            sockfd);
+#ifdef DEBUG_PRINT
+    // fprintf(stderr, "%-16s: send %zu bytes '%s' to sockfd %d\n", __FUNCTION__, len, (char*)buf,
+    //         sockfd);
+    DEBUG("send %zu bytes '%s' to sockfd %d", __FUNCTION__, len, (char*)buf, sockfd);
 #endif
 
     // Check if each byte between address buf and buf+len is tainted.
     const uintptr_t start = (const uintptr_t)buf;
     const uintptr_t end = (const uintptr_t)buf + len;
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: check taint 0x%lx -- 0x%lx\n", __FUNCTION__, start, end);
+#ifdef DEBUG_PRINT
+    // fprintf(stderr, "%-16s: check taint 0x%lx -- 0x%lx\n", __FUNCTION__, start, end);
+    DEBUG("check taint 0x%lx -- 0x%lx", __FUNCTION__, start, end);
 #endif
     for (uintptr_t addr = start; addr < end; addr++) {
         if (tagmap_getb(addr) != 0) {
             alert();
         }
     }
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: OK\n", __FUNCTION__);
+#ifdef DEBUG_PRINT
+    // fprintf(stderr, "%-16s: OK\n", __FUNCTION__);
+    DEBUG("OK");
 #endif
 }
 
@@ -127,8 +136,9 @@ static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: close %d\n", __FUNCTION__, fd);
+#ifdef DEBUG_PRINT
+    // fprintf(stderr, "%-16s: close %d\n", __FUNCTION__, fd);
+    DEBUG("close %d", fd);
 #endif
 
     if (likely(fdset.find(fd) != fdset.end())) {
