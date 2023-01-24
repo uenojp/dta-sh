@@ -16,7 +16,7 @@
 #include "libdft_api.h"
 #include "syscall_desc.h"
 
-// #define DEBUG
+#define DEBUG
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static const tag_traits<tag_t>::type tag = 1;
@@ -39,15 +39,15 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
+#ifdef DEBUG
+    fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
+#endif
+
     // Exclude files with '.so' and '.so.' in the filename since dynamic linked binaries loads
     // shared libraries(.so) at runtime. Shared libraries do not need be taint.
     if (strstr(pathname, ".so") != NULL || strstr(pathname, ".so.") != NULL) {
         return;
     }
-
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
-#endif
 
     fdset.insert(fd);
 }
@@ -132,7 +132,32 @@ static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
 #endif
 
     if (likely(fdset.find(fd) != fdset.end())) {
+#ifdef DEBUG
+    fprintf(stderr, "%-16s: delete fd %d\n", __FUNCTION__, fd);
+#endif
         fdset.erase(fd);
+    }
+}
+
+// post_dup2_hook post-hooks dup2(2) to save the duplicated newfd.
+static void post_dup2_hook(THREADID tid, syscall_ctx_t* ctx) {
+    const int ret = (const int)ctx->ret;
+    const int oldfd = (const int)ctx->arg[SYSCALL_ARG0];
+    const int newfd = (const int)ctx->arg[SYSCALL_ARG1];
+
+    if (unlikely(ret < 0)) {
+        return;
+    }
+
+#ifdef DEBUG
+    fprintf(stderr, "%-16s: duplicate %d and get %d\n", __FUNCTION__, oldfd, newfd);
+#endif
+
+    if (likely(fdset.find(oldfd) != fdset.end())) {
+#ifdef DEBUG
+        fprintf(stderr, "%-16s: insert fd %d for tracking\n", __FUNCTION__, newfd);
+#endif
+        fdset.insert(newfd);
     }
 }
 
@@ -152,6 +177,7 @@ int main(int argc, char** argv) {
     syscall_set_post(&syscall_desc[__NR_read], post_read_hook);
     syscall_set_pre(&syscall_desc[__NR_sendto], pre_sendto_hook);
     syscall_set_post(&syscall_desc[__NR_close], post_close_hook);
+    syscall_set_post(&syscall_desc[__NR_dup2], post_dup2_hook);
 
     PIN_StartProgram();
 
