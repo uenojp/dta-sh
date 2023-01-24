@@ -1,0 +1,812 @@
+execve("/usr/bin/sh", ["sh", "pipe.sh"], 0x7ffc94895040 /* 76 vars */) = 0
+brk(NULL)                               = 0x558a8bd36000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7fff9c9fc540) = -1 EINVAL (Invalid argument)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=76099, ...}, AT_EMPTY_PATH) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+close(3)                                = 0
+arch_prctl(ARCH_SET_FS, 0x7fea4ed96740) = 0
+set_tid_address(0x7fea4ed96a10)         = 170579
+set_robust_list(0x7fea4ed96a20, 24)     = 0
+rseq(0x7fea4ed970e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fea4efae000, 16384, PROT_READ) = 0
+mprotect(0x558a8a33a000, 8192, PROT_READ) = 0
+mprotect(0x7fea4f00e000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fea4efc1000, 76099)           = 0
+getuid()                                = 1000
+getgid()                                = 1000
+getpid()                                = 170579
+geteuid()                               = 1000
+getrandom("\x6c\x11\x0c\xa2\x31\xf1\xf5\xff", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x558a8bd36000
+brk(0x558a8bd57000)                     = 0x558a8bd57000
+getppid()                               = 170576
+newfstatat(AT_FDCWD, "/home/ueno/dev/dta-sh/pipe", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "pipe.sh", O_RDONLY)   = 3
+fcntl(3, F_DUPFD, 10)                   = 10
+close(3)                                = 0
+fcntl(10, F_SETFD, FD_CLOEXEC)          = 0
+geteuid()                               = 1000
+getegid()                               = 1000
+read(10, "cat /etc/passwd | curl -X POST -"..., 8192) = 52
+newfstatat(AT_FDCWD, "/home/ueno/.miniconda3/bin/cat", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ueno/bin/cat", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ueno/.nvm/versions/node/v18.9.0/bin/cat", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/cat", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/cat", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ueno/.cargo/bin/cat", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/cat", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/cat", {st_mode=S_IFREG|0755, st_size=35280, ...}, 0) = 0
+pipe2([3, 4], 0)                        = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLDstrace: Process 170580 attached
+, child_tidptr=0x7fea4ed96a10) = 170580
+[pid 170579] close(4 <unfinished ...>
+[pid 170580] set_robust_list(0x7fea4ed96a20, 24 <unfinished ...>
+[pid 170579] <... close resumed>)       = 0
+[pid 170580] <... set_robust_list resumed>) = 0
+[pid 170579] newfstatat(AT_FDCWD, "/home/ueno/.miniconda3/bin/curl", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+[pid 170580] close(10 <unfinished ...>
+[pid 170579] newfstatat(AT_FDCWD, "/home/ueno/bin/curl",  <unfinished ...>
+[pid 170580] <... close resumed>)       = 0
+[pid 170579] <... newfstatat resumed>0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+[pid 170579] newfstatat(AT_FDCWD, "/home/ueno/.nvm/versions/node/v18.9.0/bin/curl",  <unfinished ...>
+[pid 170580] close(3 <unfinished ...>
+[pid 170579] <... newfstatat resumed>0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+[pid 170580] <... close resumed>)       = 0
+[pid 170579] newfstatat(AT_FDCWD, "/usr/local/bin/curl",  <unfinished ...>
+[pid 170580] dup2(4, 1 <unfinished ...>
+[pid 170579] <... newfstatat resumed>0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+[pid 170580] <... dup2 resumed>)        = 1
+[pid 170579] newfstatat(AT_FDCWD, "/usr/local/sbin/curl",  <unfinished ...>
+[pid 170580] close(4 <unfinished ...>
+[pid 170579] <... newfstatat resumed>0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+[pid 170580] <... close resumed>)       = 0
+[pid 170579] newfstatat(AT_FDCWD, "/home/ueno/.cargo/bin/curl", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+[pid 170580] execve("/usr/bin/cat", ["cat", "/etc/passwd"], 0x558a8bd37488 /* 76 vars */ <unfinished ...>
+[pid 170579] newfstatat(AT_FDCWD, "/usr/sbin/curl", 0x7fff9c9fc2b0, 0) = -1 ENOENT (No such file or directory)
+[pid 170579] newfstatat(AT_FDCWD, "/usr/bin/curl", {st_mode=S_IFREG|0755, st_size=260328, ...}, 0) = 0
+[pid 170579] clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fea4ed96a10) = 170581
+[pid 170579] close(3 <unfinished ...>
+[pid 170580] <... execve resumed>)      = 0
+[pid 170579] <... close resumed>)       = 0
+strace: Process 170581 attached
+[pid 170579] close(-1)                  = -1 EBADF (Bad file descriptor)
+[pid 170581] set_robust_list(0x7fea4ed96a20, 24 <unfinished ...>
+[pid 170580] brk(NULL <unfinished ...>
+[pid 170579] wait4(-1,  <unfinished ...>
+[pid 170580] <... brk resumed>)         = 0x560f8126b000
+[pid 170580] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd6e95cbc0 <unfinished ...>
+[pid 170581] <... set_robust_list resumed>) = 0
+[pid 170580] <... arch_prctl resumed>)  = -1 EINVAL (Invalid argument)
+[pid 170580] access("/etc/ld.so.preload", R_OK <unfinished ...>
+[pid 170581] close(10 <unfinished ...>
+[pid 170580] <... access resumed>)      = -1 ENOENT (No such file or directory)
+[pid 170580] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 170580] newfstatat(3, "",  <unfinished ...>
+[pid 170581] <... close resumed>)       = 0
+[pid 170580] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=76099, ...}, AT_EMPTY_PATH) = 0
+[pid 170580] close(3 <unfinished ...>
+[pid 170581] dup2(3, 0 <unfinished ...>
+[pid 170580] <... close resumed>)       = 0
+[pid 170580] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 170580] read(3,  <unfinished ...>
+[pid 170581] <... dup2 resumed>)        = 0
+[pid 170580] <... read resumed>"\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+[pid 170581] close(3 <unfinished ...>
+[pid 170580] pread64(3,  <unfinished ...>
+[pid 170581] <... close resumed>)       = 0
+[pid 170580] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid 170580] pread64(3,  <unfinished ...>
+[pid 170581] execve("/usr/bin/curl", ["curl", "-X", "POST", "-d", "@-", "localhost:9999"], 0x558a8bd374b8 /* 76 vars */ <unfinished ...>
+[pid 170580] <... pread64 resumed>"\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+[pid 170580] pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+[pid 170580] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+[pid 170580] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid 170581] <... execve resumed>)      = 0
+[pid 170581] brk(NULL <unfinished ...>
+[pid 170581] <... brk resumed>)         = 0x555c98adf000
+[pid 170581] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe0d67daa0 <unfinished ...>
+[pid 170581] <... arch_prctl resumed>)  = -1 EINVAL (Invalid argument)
+[pid 170581] access("/etc/ld.so.preload", R_OK <unfinished ...>
+[pid 170580] close(3 <unfinished ...>
+[pid 170581] <... access resumed>)      = -1 ENOENT (No such file or directory)
+[pid 170580] <... close resumed>)       = 0
+[pid 170581] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid 170581] <... openat resumed>)      = 3
+[pid 170581] newfstatat(3, "",  <unfinished ...>
+[pid 170580] arch_prctl(ARCH_SET_FS, 0x7f0a4703a740 <unfinished ...>
+[pid 170581] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=76099, ...}, AT_EMPTY_PATH) = 0
+[pid 170580] <... arch_prctl resumed>)  = 0
+[pid 170580] set_tid_address(0x7f0a4703aa10 <unfinished ...>
+[pid 170580] <... set_tid_address resumed>) = 170580
+[pid 170581] close(3 <unfinished ...>
+[pid 170580] set_robust_list(0x7f0a4703aa20, 24 <unfinished ...>
+[pid 170581] <... close resumed>)       = 0
+[pid 170580] <... set_robust_list resumed>) = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcurl.so.4", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid 170580] rseq(0x7f0a4703b0e0, 0x20, 0, 0x53053053 <unfinished ...>
+[pid 170581] <... openat resumed>)      = 3
+[pid 170580] <... rseq resumed>)        = 0
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=673560, ...}, AT_EMPTY_PATH) = 0
+[pid 170580] mprotect(0x7f0a47252000, 16384, PROT_READ <unfinished ...>
+[pid 170581] mprotect(0x7f2d51bf4000, 589824, PROT_NONE <unfinished ...>
+[pid 170580] <... mprotect resumed>)    = 0
+[pid 170581] <... mprotect resumed>)    = 0
+[pid 170580] mprotect(0x560f80384000, 4096, PROT_READ <unfinished ...>
+[pid 170580] <... mprotect resumed>)    = 0
+[pid 170580] mprotect(0x7f0a472b2000, 8192, PROT_READ <unfinished ...>
+[pid 170580] <... mprotect resumed>)    = 0
+[pid 170580] prlimit64(0, RLIMIT_STACK, NULL,  <unfinished ...>
+[pid 170580] <... prlimit64 resumed>{rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 170580] munmap(0x7f0a47265000, 76099 <unfinished ...>
+[pid 170581] close(3)                   = 0
+[pid 170580] <... munmap resumed>)      = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 170580] getrandom( <unfinished ...>
+[pid 170581] read(3,  <unfinished ...>
+[pid 170580] <... getrandom resumed>"\x65\xb0\x27\x3f\x34\x5f\x2a\xde", 8, GRND_NONBLOCK) = 8
+[pid 170581] <... read resumed>"\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170580] brk(NULL <unfinished ...>
+[pid 170581] newfstatat(3, "",  <unfinished ...>
+[pid 170580] <... brk resumed>)         = 0x560f8126b000
+[pid 170581] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=108936, ...}, AT_EMPTY_PATH) = 0
+[pid 170580] brk(0x560f8128c000 <unfinished ...>
+[pid 170580] <... brk resumed>)         = 0x560f8128c000
+[pid 170581] mprotect(0x7f2d51bcb000, 98304, PROT_NONE <unfinished ...>
+[pid 170580] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid 170581] <... mprotect resumed>)    = 0
+[pid 170580] <... openat resumed>)      = 3
+[pid 170580] newfstatat(3, "",  <unfinished ...>
+[pid 170580] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=6784496, ...}, AT_EMPTY_PATH) = 0
+[pid 170580] close(3 <unfinished ...>
+[pid 170580] <... close resumed>)       = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC <unfinished ...>
+[pid 170580] newfstatat(1, "",  <unfinished ...>
+[pid 170581] <... openat resumed>)      = 3
+[pid 170580] <... newfstatat resumed>{st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] read(3,  <unfinished ...>
+[pid 170580] openat(AT_FDCWD, "/etc/passwd", O_RDONLY <unfinished ...>
+[pid 170581] <... read resumed>"\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+[pid 170580] <... openat resumed>)      = 3
+[pid 170581] pread64(3,  <unfinished ...>
+[pid 170580] newfstatat(3, "",  <unfinished ...>
+[pid 170581] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid 170580] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2929, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] pread64(3,  <unfinished ...>
+[pid 170580] fadvise64(3, 0, 0, POSIX_FADV_SEQUENTIAL <unfinished ...>
+[pid 170581] <... pread64 resumed>"\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+[pid 170580] <... fadvise64 resumed>)   = 0
+[pid 170581] pread64(3,  <unfinished ...>
+[pid 170581] <... pread64 resumed>"\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+[pid 170581] newfstatat(3, "",  <unfinished ...>
+[pid 170580] read(3,  <unfinished ...>
+[pid 170581] <... newfstatat resumed>{st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+[pid 170580] <... read resumed>"root:x:0:0:root:/root:/bin/bash\n"..., 131072) = 2929
+[pid 170581] pread64(3,  <unfinished ...>
+[pid 170580] write(1, "root:x:0:0:root:/root:/bin/bash\n"..., 2929 <unfinished ...>
+[pid 170581] <... pread64 resumed>"\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid 170580] <... write resumed>)       = 2929
+[pid 170580] read(3,  <unfinished ...>
+[pid 170580] <... read resumed>"", 131072) = 0
+[pid 170580] munmap(0x7f0a4699f000, 139264 <unfinished ...>
+[pid 170580] <... munmap resumed>)      = 0
+[pid 170580] close(3 <unfinished ...>
+[pid 170580] <... close resumed>)       = 0
+[pid 170580] close(1 <unfinished ...>
+[pid 170580] <... close resumed>)       = 0
+[pid 170580] close(2 <unfinished ...>
+[pid 170580] <... close resumed>)       = 0
+[pid 170581] close(3 <unfinished ...>
+[pid 170580] exit_group(0 <unfinished ...>
+[pid 170581] <... close resumed>)       = 0
+[pid 170580] <... exit_group resumed>)  = ?
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnghttp2.so.14", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=166256, ...}, AT_EMPTY_PATH) = 0
+[pid 170580] +++ exited with 0 +++
+[pid 170579] <... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 170580
+[pid 170579] --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=170580, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+[pid 170579] rt_sigreturn({mask=[]} <unfinished ...>
+[pid 170579] <... rt_sigreturn resumed>) = 170580
+[pid 170579] wait4(-1,  <unfinished ...>
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libidn2.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=129096, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/librtmp.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=121864, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d5193c000, 98304, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libssh.so.4", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=441944, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d518d5000, 376832, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpsl.so.5", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=75768, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libssl.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=667864, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcrypto.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=4447536, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgssapi_krb5.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=338712, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d51385000, 282624, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libldap-2.5.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=376512, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d51329000, 311296, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblber-2.5.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=63992, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d5130b000, 49152, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libzstd.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=841808, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlidec.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=51512, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunistring.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1743016, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgnutls.so.30", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2000320, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libhogweed.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=289800, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d50e54000, 253952, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnettle.so.8", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=281000, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgmp.so.10", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=526896, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkrb5.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=828000, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d50cda000, 634880, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libk5crypto.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=182928, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d50c8e000, 163840, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcom_err.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=18504, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkrb5support.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=52080, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d50c77000, 36864, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libsasl2.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=105392, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlicommon.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=137560, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libp11-kit.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1285888, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libtasn1.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=92312, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d50ae4000, 77824, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkeyutils.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=22600, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libresolv.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=68552, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libffi.so.8", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=47688, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] mprotect(0x7f2d50abb000, 36864, PROT_NONE) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] arch_prctl(ARCH_SET_FS, 0x7f2d50ab5f00) = 0
+[pid 170581] set_tid_address(0x7f2d50ab61d0) = 170581
+[pid 170581] set_robust_list(0x7f2d50ab61e0, 24) = 0
+[pid 170581] rseq(0x7f2d50ab68a0, 0x20, 0, 0x53053053) = 0
+[pid 170581] mprotect(0x7f2d51bb6000, 16384, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50ac4000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50ad6000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50adf000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50af7000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50c22000, 40960, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50c57000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50c72000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50c80000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50c86000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50cb6000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50d75000, 53248, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50e04000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50e49000, 8192, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d50e92000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51226000, 16384, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51975000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d5106d000, 65536, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51237000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51306000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51317000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51375000, 8192, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d513ca000, 8192, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d517af000, 372736, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d518a6000, 40960, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d518c6000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51be3000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51931000, 8192, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51954000, 4096, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d5199d000, 12288, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51c84000, 16384, PROT_READ) = 0
+[pid 170581] mprotect(0x555c977bf000, 20480, PROT_READ) = 0
+[pid 170581] mprotect(0x7f2d51cd8000, 8192, PROT_READ) = 0
+[pid 170581] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 170581] munmap(0x7f2d51c8b000, 76099) = 0
+[pid 170581] getrandom("\xcb\x17\x26\x39\xdb\xae\x88\x9b", 8, GRND_NONBLOCK) = 8
+[pid 170581] brk(NULL)                  = 0x555c98adf000
+[pid 170581] brk(0x555c98b00000)        = 0x555c98b00000
+[pid 170581] getrandom("\xeb", 1, GRND_NONBLOCK) = 1
+[pid 170581] newfstatat(AT_FDCWD, "/etc/gnutls/config", 0x7ffe0d67d390, 0) = -1 ENOENT (No such file or directory)
+[pid 170581] pipe2([3, 4], 0)           = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] close(4)                   = 0
+[pid 170581] futex(0x7f2d5180cba4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180cba0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180cb9c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180cef0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180cb94, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180cb90, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180c778, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180ca00, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180c748, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] brk(0x555c98b21000)        = 0x555c98b21000
+[pid 170581] futex(0x7f2d5180cb98, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] openat(AT_FDCWD, "/usr/lib/ssl/openssl.cnf", O_RDONLY) = 3
+[pid 170581] futex(0x7f2d5180c4d0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=12419, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] read(3, "#\n# OpenSSL example configuratio"..., 4096) = 4096
+[pid 170581] read(3, "r type CA, the listed attributes"..., 4096) = 4096
+[pid 170581] read(3, "r:copy\n\n# DER hex encoding of an"..., 4096) = 4096
+[pid 170581] read(3, "ertout # insta.cert.pem\n\n[ssl_se"..., 4096) = 131
+[pid 170581] read(3, "", 4096)          = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] futex(0x7f2d5180c920, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180cb80, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180cb7c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180c70c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d5180cb8c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] futex(0x7f2d518b37c0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] sysinfo({uptime=287806, loads=[111840, 94176, 77760], totalram=33584680960, freeram=22687653888, sharedram=602832896, bufferram=744742912, totalswap=2147479552, freeswap=2147479552, procs=1396, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+[pid 170581] futex(0x7f2d518b37d4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 170581] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6784496, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/home/ueno/.curlrc", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 170581] geteuid()                  = 1000
+[pid 170581] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 170581] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 170581] close(3)                   = 0
+[pid 170581] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 170581] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 170581] close(3)                   = 0
+[pid 170581] newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=542, ...}, 0) = 0
+[pid 170581] newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+[pid 170581] openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=542, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 542
+[pid 170581] read(3, "", 4096)          = 0
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=542, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+[pid 170581] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2929, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] lseek(3, 0, SEEK_SET)      = 0
+[pid 170581] read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 2929
+[pid 170581] close(3)                   = 0
+[pid 170581] openat(AT_FDCWD, "/home/ueno/.curlrc", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 170581] newfstatat(0, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] read(0, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 2929
+[pid 170581] read(0, "", 4096)          = 0
+[pid 170581] ioctl(1, TCGETS, 0x7ffe0d67d670) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 170581] ioctl(0, TIOCGWINSZ, 0x7ffe0d67d790) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 170581] socket(AF_INET6, SOCK_DGRAM, IPPROTO_IP) = 3
+[pid 170581] close(3)                   = 0
+[pid 170581] socketpair(AF_UNIX, SOCK_STREAM, 0, [3, 4]) = 0
+[pid 170581] fcntl(3, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid 170581] fcntl(3, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid 170581] fcntl(4, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid 170581] fcntl(4, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid 170581] poll([{fd=3, events=POLLIN}], 1, 0) = 0 (Timeout)
+[pid 170581] brk(0x555c98b53000)        = 0x555c98b53000
+[pid 170581] socket(AF_INET, SOCK_STREAM, IPPROTO_TCP) = 5
+[pid 170581] setsockopt(5, SOL_TCP, TCP_NODELAY, [1], 4) = 0
+[pid 170581] setsockopt(5, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
+[pid 170581] setsockopt(5, SOL_TCP, TCP_KEEPIDLE, [60], 4) = 0
+[pid 170581] setsockopt(5, SOL_TCP, TCP_KEEPINTVL, [60], 4) = 0
+[pid 170581] fcntl(5, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid 170581] fcntl(5, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid 170581] connect(5, {sa_family=AF_INET, sin_port=htons(9999), sin_addr=inet_addr("127.0.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress)
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "%", 1%)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "T", 1T)           = 1
+[pid 170581] write(2, "o", 1o)           = 1
+[pid 170581] write(2, "t", 1t)           = 1
+[pid 170581] write(2, "a", 1a)           = 1
+[pid 170581] write(2, "l", 1l)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "%", 1%)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "R", 1R)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "c", 1c)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "i", 1i)           = 1
+[pid 170581] write(2, "v", 1v)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "d", 1d)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "%", 1%)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "X", 1X)           = 1
+[pid 170581] write(2, "f", 1f)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "r", 1r)           = 1
+[pid 170581] write(2, "d", 1d)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "A", 1A)           = 1
+[pid 170581] write(2, "v", 1v)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "r", 1r)           = 1
+[pid 170581] write(2, "a", 1a)           = 1
+[pid 170581] write(2, "g", 1g)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "S", 1S)           = 1
+[pid 170581] write(2, "p", 1p)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "d", 1d)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "T", 1T)           = 1
+[pid 170581] write(2, "i", 1i)           = 1
+[pid 170581] write(2, "m", 1m)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "T", 1T)           = 1
+[pid 170581] write(2, "i", 1i)           = 1
+[pid 170581] write(2, "m", 1m)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "T", 1T)           = 1
+[pid 170581] write(2, "i", 1i)           = 1
+[pid 170581] write(2, "m", 1m)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "C", 1C)           = 1
+[pid 170581] write(2, "u", 1u)           = 1
+[pid 170581] write(2, "r", 1r)           = 1
+[pid 170581] write(2, "r", 1r)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "n", 1n)           = 1
+[pid 170581] write(2, "t", 1t)           = 1
+[pid 170581] write(2, "\n", 1
+)          = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "D", 1D)           = 1
+[pid 170581] write(2, "l", 1l)           = 1
+[pid 170581] write(2, "o", 1o)           = 1
+[pid 170581] write(2, "a", 1a)           = 1
+[pid 170581] write(2, "d", 1d)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "U", 1U)           = 1
+[pid 170581] write(2, "p", 1p)           = 1
+[pid 170581] write(2, "l", 1l)           = 1
+[pid 170581] write(2, "o", 1o)           = 1
+[pid 170581] write(2, "a", 1a)           = 1
+[pid 170581] write(2, "d", 1d)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "T", 1T)           = 1
+[pid 170581] write(2, "o", 1o)           = 1
+[pid 170581] write(2, "t", 1t)           = 1
+[pid 170581] write(2, "a", 1a)           = 1
+[pid 170581] write(2, "l", 1l)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "S", 1S)           = 1
+[pid 170581] write(2, "p", 1p)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "n", 1n)           = 1
+[pid 170581] write(2, "t", 1t)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "L", 1L)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "f", 1f)           = 1
+[pid 170581] write(2, "t", 1t)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "S", 1S)           = 1
+[pid 170581] write(2, "p", 1p)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "e", 1e)           = 1
+[pid 170581] write(2, "d", 1d)           = 1
+[pid 170581] write(2, "\n", 1
+)          = 1
+[pid 170581] write(2, "\r", 1)          = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] poll([{fd=5, events=POLLPRI|POLLOUT|POLLWRNORM}], 1, 0) = 1 ([{fd=5, revents=POLLOUT|POLLWRNORM}])
+[pid 170581] getsockopt(5, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+[pid 170581] getpeername(5, {sa_family=AF_INET, sin_port=htons(9999), sin_addr=inet_addr("127.0.0.1")}, [128 => 16]) = 0
+[pid 170581] getsockname(5, {sa_family=AF_INET, sin_port=htons(59384), sin_addr=inet_addr("127.0.0.1")}, [128 => 16]) = 0
+[pid 170581] sendto(5, "POST / HTTP/1.1\r\nHost: localhost"..., 3030, MSG_NOSIGNAL, NULL, 0) = 3030
+[pid 170581] poll([{fd=5, events=POLLIN|POLLPRI|POLLRDNORM|POLLRDBAND}], 1, 0) = 0 (Timeout)
+[pid 170581] poll([{fd=5, events=POLLIN}, {fd=3, events=POLLIN}], 2, 194) = 1 ([{fd=5, revents=POLLIN}])
+[pid 170581] poll([{fd=5, events=POLLIN|POLLPRI|POLLRDNORM|POLLRDBAND}], 1, 0) = 1 ([{fd=5, revents=POLLIN|POLLRDNORM}])
+[pid 170581] recvfrom(5, "HTTP/1.0 200 OK\r\nServer: BaseHTT"..., 102400, 0, NULL, NULL) = 117
+[pid 170581] newfstatat(1, "", {st_mode=S_IFREG|0664, st_size=66320, ...}, AT_EMPTY_PATH) = 0
+[pid 170581] poll([{fd=5, events=POLLIN}, {fd=3, events=POLLIN}], 2, 194) = 1 ([{fd=5, revents=POLLIN}])
+[pid 170581] poll([{fd=5, events=POLLIN|POLLPRI|POLLRDNORM|POLLRDBAND}], 1, 0) = 1 ([{fd=5, revents=POLLIN|POLLRDNORM}])
+[pid 170581] recvfrom(5, "", 102400, 0, NULL, NULL) = 0
+[pid 170581] write(2, "\r", 1)          = 1
+[pid 170581] write(2, "1", 11)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "2", 12)           = 1
+[pid 170581] write(2, "9", 19)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, "5", 15)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "2", 12)           = 1
+[pid 170581] write(2, "5", 15)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "1", 11)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "2", 12)           = 1
+[pid 170581] write(2, "8", 18)           = 1
+[pid 170581] write(2, "8", 18)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "4", 14)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "4", 14)           = 1
+[pid 170581] write(2, "5", 15)           = 1
+[pid 170581] write(2, "0", 10)           = 1
+[pid 170581] write(2, "k", 1k)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, ":", 1:)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, "-", 1-)           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, " ", 1 )           = 1
+[pid 170581] write(2, "4", 14)           = 1
+[pid 170581] write(2, "7", 17)           = 1
+[pid 170581] write(2, "2", 12)           = 1
+[pid 170581] write(2, "k", 1k)           = 1
+[pid 170581] write(2, "\n", 1
+)          = 1
+[pid 170581] close(5)                   = 0
+[pid 170581] write(1, "Response to POST request\n", 25Response to POST request
+) = 25
+[pid 170581] close(3)                   = 0
+[pid 170581] close(4)                   = 0
+[pid 170581] exit_group(0)              = ?
+[pid 170581] +++ exited with 0 +++
+<... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 170581
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=170581, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+rt_sigreturn({mask=[]})                 = 170581
+wait4(-1, 0x7fff9c9fc20c, WNOHANG, NULL) = -1 ECHILD (No child processes)
+read(10, "", 8192)                      = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
