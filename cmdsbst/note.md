@@ -28,3 +28,7 @@ echo "shell pid: $$"
 strace -f check.sh > stdout
 ```
 
+### 動作を確認するために必要そうなsyscallのみ
+```
+strace -oout -e execve,pipe2,openat,read,readv,write,writev,close,wait4,dup2,clone,fork,vfork,socket,connect,sendto,recvfrom,fcntl -ff sh -c 'seq 10 | factor | awk "NF==2"'
+```

@@ -1,0 +1,24 @@
+execve("/usr/bin/sh", ["sh", "-c", "seq 10 | factor | awk \"NF==2\""], 0x7ffe87fdf740 /* 63 vars */) = 0
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+close(3)                                = 0
+pipe2([3, 4], 0)                        = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7facdb4f9a10) = 201333
+close(4)                                = 0
+pipe2([4, 5], 0)                        = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7facdb4f9a10) = 201334
+close(3)                                = 0
+close(5)                                = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7facdb4f9a10) = 201335
+close(4)                                = 0
+close(-1)                               = -1 EBADF (Bad file descriptor)
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 201333
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=201333, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 201334
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=201334, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 201335
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=201335, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, 0x7ffe77bffb4c, WNOHANG, NULL) = -1 ECHILD (No child processes)
++++ exited with 0 +++
