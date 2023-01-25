@@ -18,7 +18,7 @@
 #include "libdft_api.h"
 #include "syscall_desc.h"
 
-#define DEBUG_PRINT
+// #define DEBUG_PRINT
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static const tag_traits<tag_t>::type tag = 1;
@@ -41,7 +41,7 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG
+#ifdef DEBUG_PRINT
     fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
 #endif
 
@@ -160,12 +160,12 @@ static void post_dup2_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG
+#ifdef DEBUG_PRINT
     fprintf(stderr, "%-16s: duplicate %d and got %d\n", __FUNCTION__, oldfd, newfd);
 #endif
 
     if (likely(fdset.find(oldfd) != fdset.end())) {
-#ifdef DEBUG
+#ifdef DEBUG_PRINT
         fprintf(stderr, "%-16s: insert %d\n", __FUNCTION__, newfd);
 #endif
         fdset.insert(newfd);
