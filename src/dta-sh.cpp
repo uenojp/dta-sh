@@ -39,15 +39,15 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
+#ifdef DEBUG
+    fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
+#endif
+
     // Exclude files with '.so' and '.so.' in the filename since dynamic linked binaries loads
     // shared libraries(.so) at runtime. Shared libraries do not need be taint.
     if (strstr(pathname, ".so") != NULL || strstr(pathname, ".so.") != NULL) {
         return;
     }
-
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
-#endif
 
     fdset.insert(fd);
 }
