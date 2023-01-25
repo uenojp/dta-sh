@@ -136,6 +136,28 @@ static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 }
 
+// post_dup2_hook post-hooks dup2(2) to save the duplicated newfd.
+static void post_dup2_hook(THREADID tid, syscall_ctx_t* ctx) {
+    const int ret = (const int)ctx->ret;
+    const int oldfd = (const int)ctx->arg[SYSCALL_ARG0];
+    const int newfd = (const int)ctx->arg[SYSCALL_ARG1];
+
+    if (unlikely(ret < 0)) {
+        return;
+    }
+
+#ifdef DEBUG
+    fprintf(stderr, "%-16s: duplicate %d and got %d\n", __FUNCTION__, oldfd, newfd);
+#endif
+
+    if (likely(fdset.find(oldfd) != fdset.end())) {
+#ifdef DEBUG
+        fprintf(stderr, "%-16s: insert %d\n", __FUNCTION__, newfd);
+#endif
+        fdset.insert(newfd);
+    }
+}
+
 int main(int argc, char** argv) {
     PIN_InitSymbols();
 
@@ -152,6 +174,7 @@ int main(int argc, char** argv) {
     syscall_set_post(&syscall_desc[__NR_read], post_read_hook);
     syscall_set_pre(&syscall_desc[__NR_sendto], pre_sendto_hook);
     syscall_set_post(&syscall_desc[__NR_close], post_close_hook);
+    syscall_set_post(&syscall_desc[__NR_dup2], post_dup2_hook);
 
     PIN_StartProgram();
 
