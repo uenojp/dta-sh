@@ -18,7 +18,7 @@
 #include "libdft_api.h"
 #include "syscall_desc.h"
 
-// #define DEBUG_PRINT
+#define DEBUG_PRINT
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static const tag_traits<tag_t>::type tag = 1;
@@ -42,11 +42,6 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 
 #ifdef DEBUG_PRINT
-    fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
-#endif
-
-#ifdef DEBUG_PRINT
-    // fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
     DEBUG("open %s at fd %d", pathname, fd);
 #endif
 
@@ -71,7 +66,6 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 
 #ifdef DEBUG_PRINT
-    // fprintf(stderr, "%-16s: read %zd bytes from fd %d\n", __FUNCTION__, nread, fd);
     DEBUG("read %zd bytes from fd %d", nread, fd);
 #endif
 
@@ -86,15 +80,11 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
         // see libdft64/src/tagmap.cpp
         tagmap_setn((uintptr_t)buf, nread, tag);
 #ifdef DEBUG_PRINT
-        // fprintf(stderr, "%-16s: taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
-        //         (uintptr_t)buf + nread);
         DEBUG("taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
 #endif
     } else {
         tagmap_clrn((uintptr_t)buf, nread);
 #ifdef DEBUG_PRINT
-        // fprintf(stderr, "%-16s: clear taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
-        //         (uintptr_t)buf + nread);
         DEBUG("clear taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
 #endif
     }
@@ -108,17 +98,14 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     const size_t len = (const size_t)ctx->arg[SYSCALL_ARG2];
 
 #ifdef DEBUG_PRINT
-    // fprintf(stderr, "%-16s: send %zu bytes '%s' to sockfd %d\n", __FUNCTION__, len, (char*)buf,
-    //         sockfd);
-    DEBUG("send %zu bytes '%s' to sockfd %d", __FUNCTION__, len, (char*)buf, sockfd);
+    DEBUG("send %zu bytes '%s' to sockfd %d", len, (char*)buf, sockfd);
 #endif
 
     // Check if each byte between address buf and buf+len is tainted.
     const uintptr_t start = (const uintptr_t)buf;
     const uintptr_t end = (const uintptr_t)buf + len;
 #ifdef DEBUG_PRINT
-    // fprintf(stderr, "%-16s: check taint 0x%lx -- 0x%lx\n", __FUNCTION__, start, end);
-    DEBUG("check taint 0x%lx -- 0x%lx", __FUNCTION__, start, end);
+    DEBUG("check taint 0x%lx -- 0x%lx", start, end);
 #endif
     for (uintptr_t addr = start; addr < end; addr++) {
         if (tagmap_getb(addr) != 0) {
@@ -126,7 +113,6 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
         }
     }
 #ifdef DEBUG_PRINT
-    // fprintf(stderr, "%-16s: OK\n", __FUNCTION__);
     DEBUG("OK");
 #endif
 }
@@ -141,7 +127,6 @@ static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 
 #ifdef DEBUG_PRINT
-    // fprintf(stderr, "%-16s: close %d\n", __FUNCTION__, fd);
     DEBUG("close %d", fd);
 #endif
 
@@ -161,12 +146,12 @@ static void post_dup2_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 
 #ifdef DEBUG_PRINT
-    fprintf(stderr, "%-16s: duplicate %d and got %d\n", __FUNCTION__, oldfd, newfd);
+    DEBUG("duplicate %d and got %d\n", oldfd, newfd);
 #endif
 
     if (likely(fdset.find(oldfd) != fdset.end())) {
 #ifdef DEBUG_PRINT
-        fprintf(stderr, "%-16s: insert %d\n", __FUNCTION__, newfd);
+        DEBUG("insert fd %d", newfd);
 #endif
         fdset.insert(newfd);
     }
