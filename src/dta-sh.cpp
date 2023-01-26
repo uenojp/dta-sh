@@ -27,7 +27,7 @@ static const tag_traits<tag_t>::type tag = 1;
 static std::set<int> fdset;
 
 // alert aborts the program, called when a data leak is detected.
-void alert() {
+static void alert() {
     fprintf(stderr, "\n\n!!!!ABORT!!!! detected data leak\n\n");
     exit(42);
 }
@@ -76,17 +76,17 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     // Note that you should not clean taints in close callback function becasue the read data will
     // continue to exist after it the file is closed.
     if (fdset.find(fd) != fdset.end()) {
-        // NOTE: tagmap_setn taints [buf, buf+nread). Data at address buf+len is not tainted.
-        // see libdft64/src/tagmap.cpp
-        tagmap_setn((uintptr_t)buf, nread, tag);
 #ifdef DEBUG_PRINT
         DEBUG("taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
 #endif
+        // NOTE: tagmap_setn taints [buf, buf+nread). Data at address buf+len is not tainted.
+        // see libdft64/src/tagmap.cpp
+        tagmap_setn((uintptr_t)buf, nread, tag);
     } else {
-        tagmap_clrn((uintptr_t)buf, nread);
 #ifdef DEBUG_PRINT
         DEBUG("clear taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
 #endif
+        tagmap_clrn((uintptr_t)buf, nread);
     }
 }
 
@@ -104,9 +104,11 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     // Check if each byte between address buf and buf+len is tainted.
     const uintptr_t start = (const uintptr_t)buf;
     const uintptr_t end = (const uintptr_t)buf + len;
+
 #ifdef DEBUG_PRINT
     DEBUG("check taint 0x%lx -- 0x%lx", start, end);
 #endif
+
     for (uintptr_t addr = start; addr < end; addr++) {
         if (tagmap_getb(addr) != 0) {
             alert();
@@ -146,7 +148,7 @@ static void post_dup2_hook(THREADID tid, syscall_ctx_t* ctx) {
     }
 
 #ifdef DEBUG_PRINT
-    DEBUG("duplicate %d and got %d\n", oldfd, newfd);
+    DEBUG("duplicate %d and get %d\n", oldfd, newfd);
 #endif
 
     if (likely(fdset.find(oldfd) != fdset.end())) {
