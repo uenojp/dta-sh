@@ -2,14 +2,15 @@
 
 set -eu
 
-mkdir out
-
-N=30
+readonly OUTDIR="out-$RANDOM"
+readonly N=100
 i=1
+
+mkdir "$OUTDIR"
 
 while [[ $i -le $N ]]; do
     INFILE='../src/sendfile.sh'
-    OUTFILE="out/$i.sh"
+    OUTFILE="$OUTDIR/$i.sh"
 
     timeout 10 \
     bashfuscator -f "$INFILE" -o "$OUTFILE" \
