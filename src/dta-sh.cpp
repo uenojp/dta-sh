@@ -6,7 +6,7 @@
 // - dta-dataleak.cpp
 //      example code for chapter11 of https://practicalbinaryanalysis.com/
 
-// #define DEBUG_PRINT
+#define DEBUG_PRINT
 #include "dta-sh.h"
 
 #include <set>
@@ -26,8 +26,9 @@ static const tag_traits<tag_t>::type tag = 1;
 static std::set<int> fdset;
 
 // alert aborts the program, called when a data leak is detected.
-static void alert() {
-    fprintf(stderr, "\n\n!!!!ABORT!!!! detected data leak\n\n");
+static void alert(uintptr_t addr) {
+    DEBUG("address 0x%lx is tainted", addr);
+    DEBUG("\e[91m!!!! ABORT !!!!    Data leak detected\e[0m");
     exit(42);
 }
 
@@ -98,7 +99,7 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
 
     for (uintptr_t addr = start; addr < end; addr++) {
         if (tagmap_getb(addr) != 0) {
-            alert();
+            alert(addr);
         }
     }
     DEBUG("OK");
