@@ -6,6 +6,7 @@
 // - dta-dataleak.cpp
 //      example code for chapter11 of https://practicalbinaryanalysis.com/
 
+// #define DEBUG_PRINT
 #include "dta-sh.h"
 
 #include <set>
@@ -17,8 +18,6 @@
 #include "branch_pred.h"
 #include "libdft_api.h"
 #include "syscall_desc.h"
-
-#define DEBUG_PRINT
 
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static const tag_traits<tag_t>::type tag = 1;
@@ -41,9 +40,7 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG_PRINT
     DEBUG("open %s at fd %d", pathname, fd);
-#endif
 
     // Exclude files with '.so' and '.so.' in the filename since dynamic linked binaries loads
     // shared libraries(.so) at runtime. Shared libraries do not need be taint.
@@ -65,9 +62,7 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG_PRINT
     DEBUG("read %zd bytes from fd %d", nread, fd);
-#endif
 
     // If the fd is to be tracked(= fdset contins fd), taint bytes from buf to buf+nread-1.
     // Otherwise(= fdset do not contains fd), the memory area is overwritten even if it has been the
@@ -76,16 +71,12 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     // Note that you should not clean taints in close callback function becasue the read data will
     // continue to exist after it the file is closed.
     if (fdset.find(fd) != fdset.end()) {
-#ifdef DEBUG_PRINT
         DEBUG("taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
-#endif
         // NOTE: tagmap_setn taints [buf, buf+nread). Data at address buf+len is not tainted.
         // see libdft64/src/tagmap.cpp
         tagmap_setn((uintptr_t)buf, nread, tag);
     } else {
-#ifdef DEBUG_PRINT
         DEBUG("clear taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
-#endif
         tagmap_clrn((uintptr_t)buf, nread);
     }
 }
@@ -97,26 +88,20 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     const void* buf = (const void*)ctx->arg[SYSCALL_ARG1];
     const size_t len = (const size_t)ctx->arg[SYSCALL_ARG2];
 
-#ifdef DEBUG_PRINT
     DEBUG("send %zu bytes '%s' to sockfd %d", len, (char*)buf, sockfd);
-#endif
 
     // Check if each byte between address buf and buf+len is tainted.
     const uintptr_t start = (const uintptr_t)buf;
     const uintptr_t end = (const uintptr_t)buf + len;
 
-#ifdef DEBUG_PRINT
     DEBUG("check taint 0x%lx -- 0x%lx", start, end);
-#endif
 
     for (uintptr_t addr = start; addr < end; addr++) {
         if (tagmap_getb(addr) != 0) {
             alert();
         }
     }
-#ifdef DEBUG_PRINT
     DEBUG("OK");
-#endif
 }
 
 // post_close_hook post-hooks close(2) to delete fd saved in post_openat_hook.
@@ -128,9 +113,7 @@ static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG_PRINT
     DEBUG("close %d", fd);
-#endif
 
     if (likely(fdset.find(fd) != fdset.end())) {
         fdset.erase(fd);
@@ -147,14 +130,10 @@ static void post_dup2_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG_PRINT
     DEBUG("duplicate %d and get %d\n", oldfd, newfd);
-#endif
 
     if (likely(fdset.find(oldfd) != fdset.end())) {
-#ifdef DEBUG_PRINT
         DEBUG("insert fd %d", newfd);
-#endif
         fdset.insert(newfd);
     }
 }
