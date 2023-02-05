@@ -1,0 +1,538 @@
+0 filtered tests: []
+/home/ueno/dev/dta-sh/pin-3.20-98437-gf02b61307-gcc-linux/pin   -follow-execv -t obj-intel64//dta-sh.so -- bash sendfile.sh
+[pid 6341] post_openat_hook: open /etc/ld.so.cache at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /lib/x86_64-linux-gnu/libtinfo.so.6 at fd 3
+[pid 6341] post_read_hook  : read 832 bytes from fd 3
+[pid 6341] post_read_hook  : clear taint 0x7fffdb0324b8 -- 0x7fffdb0327f8
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /lib/x86_64-linux-gnu/libc.so.6 at fd 3
+[pid 6341] post_read_hook  : read 832 bytes from fd 3
+[pid 6341] post_read_hook  : clear taint 0x7fffdb032498 -- 0x7fffdb0327d8
+[pid 6341] post_close_hook : close 3
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=334)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+[pid 6341] post_openat_hook: open /dev/tty at fd 3
+[pid 6341] post_close_hook : close 3
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=318)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+[pid 6341] post_openat_hook: open /usr/lib/locale/locale-archive at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/share/locale/locale.alias at fd 3
+[pid 6341] post_read_hook  : read 2996 bytes from fd 3
+[pid 6341] post_read_hook  : taint 0x55818558f4a0 -- 0x558185590054
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_IDENTIFICATION at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MEASUREMENT at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_TELEPHONE at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_ADDRESS at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_NAME at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_PAPER at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MESSAGES at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MONETARY at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_COLLATE at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_TIME at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_NUMERIC at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open /usr/lib/locale/C.utf8/LC_CTYPE at fd 3
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_openat_hook: open sendfile.sh at fd 3
+[pid 6341] post_read_hook  : read 80 bytes from fd 3
+[pid 6341] post_read_hook  : taint 0x7fffdb0330c0 -- 0x7fffdb033110
+[pid 6341] post_dup2_hook  : duplicate 3 and get 255
+
+[pid 6341] post_dup2_hook  : insert fd 255
+[pid 6341] post_close_hook : close 3
+[pid 6341] post_read_hook  : read 156 bytes from fd 255
+[pid 6341] post_read_hook  : taint 0x5581855a5170 -- 0x5581855a520c
+[pid 6344] post_close_hook : close 255
+[pid 6341] post_close_hook : close 4
+[pid 6344] post_dup2_hook  : duplicate 4 and get 1
+
+[pid 6344] post_close_hook : close 4
+[pid 6344] post_close_hook : close 3
+[pid 6341] post_read_hook  : read 29 bytes from fd 3
+[pid 6341] post_read_hook  : clear taint 0x7fffdb032790 -- 0x7fffdb0327ad
+[pid 6341] post_read_hook  : read 51 bytes from fd 3
+[pid 6341] post_read_hook  : clear taint 0x7fffdb032790 -- 0x7fffdb0327c3
+[pid 6341] post_close_hook : close 3
+[pid 6345] post_close_hook : close 255
+[pid 6345] post_close_hook : close 4
+[pid 6346] post_dup2_hook  : duplicate 4 and get 1
+
+[pid 6346] post_close_hook : close 4
+[pid 6346] post_close_hook : close 3
+[pid 6347] post_close_hook : close 4
+[pid 6347] post_dup2_hook  : duplicate 3 and get 0
+
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /etc/ld.so.cache at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /lib/x86_64-linux-gnu/libc.so.6 at fd 3
+[pid 6347] post_read_hook  : read 832 bytes from fd 3
+[pid 6347] post_read_hook  : clear taint 0x7ffcaae0aef8 -- 0x7ffcaae0b238
+[pid 6347] post_close_hook : close 3
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=334)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=318)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+[pid 6347] post_openat_hook: open /usr/lib/locale/locale-archive at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/share/locale/locale.alias at fd 3
+[pid 6347] post_read_hook  : read 2996 bytes from fd 3
+[pid 6347] post_read_hook  : taint 0x55e5e49fb4a0 -- 0x55e5e49fc054
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_IDENTIFICATION at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MEASUREMENT at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_TELEPHONE at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_ADDRESS at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_NAME at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_PAPER at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MESSAGES at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MONETARY at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_COLLATE at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_TIME at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_NUMERIC at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_openat_hook: open /usr/lib/locale/C.utf8/LC_CTYPE at fd 3
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_read_hook  : read 49 bytes from fd 0
+[pid 6347] post_read_hook  : clear taint 0x55e5e4a072f0 -- 0x55e5e4a07321
+[pid 6345] post_read_hook  : read 16 bytes from fd 3
+[pid 6345] post_read_hook  : clear taint 0x7fffdb032330 -- 0x7fffdb032340
+[pid 6345] post_read_hook  : read 32 bytes from fd 3
+[pid 6345] post_read_hook  : clear taint 0x7fffdb032330 -- 0x7fffdb032350
+[pid 6345] post_read_hook  : read 1 bytes from fd 3
+[pid 6345] post_read_hook  : clear taint 0x7fffdb032330 -- 0x7fffdb032331
+[pid 6347] post_close_hook : close 3
+[pid 6347] post_close_hook : close 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_close_hook : close 4
+[pid 6345] post_dup2_hook  : duplicate 3 and get 0
+
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /etc/ld.so.cache at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /lib/x86_64-linux-gnu/libtinfo.so.6 at fd 3
+[pid 6345] post_read_hook  : read 832 bytes from fd 3
+[pid 6345] post_read_hook  : clear taint 0x7ffca71aab68 -- 0x7ffca71aaea8
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /lib/x86_64-linux-gnu/libc.so.6 at fd 3
+[pid 6345] post_read_hook  : read 832 bytes from fd 3
+[pid 6345] post_read_hook  : clear taint 0x7ffca71aab48 -- 0x7ffca71aae88
+[pid 6345] post_close_hook : close 3
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=334)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+[pid 6345] post_openat_hook: open /dev/tty at fd 3
+[pid 6345] post_close_hook : close 3
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=318)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+[pid 6345] post_openat_hook: open /usr/lib/locale/locale-archive at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/share/locale/locale.alias at fd 3
+[pid 6345] post_read_hook  : read 2996 bytes from fd 3
+[pid 6345] post_read_hook  : taint 0x555e37a444a0 -- 0x555e37a45054
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_IDENTIFICATION at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MEASUREMENT at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_TELEPHONE at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_ADDRESS at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_NAME at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_PAPER at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MESSAGES at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MONETARY at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_COLLATE at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_TIME at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_NUMERIC at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_openat_hook: open /usr/lib/locale/C.utf8/LC_CTYPE at fd 3
+[pid 6345] post_close_hook : close 3
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6345] post_read_hook  : read 1 bytes from fd 0
+[pid 6345] post_read_hook  : clear taint 0x555e37a47860 -- 0x555e37a47861
+[pid 6352] post_openat_hook: open /etc/ld.so.cache at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libcurl.so.4 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578c028 -- 0x7ffff578c368
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libz.so.1 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578c008 -- 0x7ffff578c348
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libc.so.6 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bfe8 -- 0x7ffff578c328
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libnghttp2.so.14 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bfc8 -- 0x7ffff578c308
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libidn2.so.0 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bfa8 -- 0x7ffff578c2e8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/librtmp.so.1 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bf88 -- 0x7ffff578c2c8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libssh.so.4 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bf68 -- 0x7ffff578c2a8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libpsl.so.5 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bf48 -- 0x7ffff578c288
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libssl.so.3 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bf28 -- 0x7ffff578c268
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libcrypto.so.3 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bf08 -- 0x7ffff578c248
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libgssapi_krb5.so.2 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bee8 -- 0x7ffff578c228
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libldap-2.5.so.0 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bec8 -- 0x7ffff578c208
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/liblber-2.5.so.0 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bea8 -- 0x7ffff578c1e8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libzstd.so.1 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578be88 -- 0x7ffff578c1c8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libbrotlidec.so.1 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578be68 -- 0x7ffff578c1a8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libunistring.so.2 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578be28 -- 0x7ffff578c168
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libgnutls.so.30 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578be08 -- 0x7ffff578c148
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libhogweed.so.6 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bde8 -- 0x7ffff578c128
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libnettle.so.8 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bdc8 -- 0x7ffff578c108
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libgmp.so.10 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bda8 -- 0x7ffff578c0e8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libkrb5.so.3 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bd88 -- 0x7ffff578c0c8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libk5crypto.so.3 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bd68 -- 0x7ffff578c0a8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libcom_err.so.2 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bd48 -- 0x7ffff578c088
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libkrb5support.so.0 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bd28 -- 0x7ffff578c068
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libsasl2.so.2 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bd08 -- 0x7ffff578c048
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libbrotlicommon.so.1 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bce8 -- 0x7ffff578c028
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libp11-kit.so.0 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bcc8 -- 0x7ffff578c008
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libtasn1.so.6 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bca8 -- 0x7ffff578bfe8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libkeyutils.so.1 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bc88 -- 0x7ffff578bfc8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libresolv.so.2 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bc68 -- 0x7ffff578bfa8
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /lib/x86_64-linux-gnu/libffi.so.8 at fd 3
+[pid 6352] post_read_hook  : read 832 bytes from fd 3
+[pid 6352] post_read_hook  : clear taint 0x7ffff578bc48 -- 0x7ffff578bf88
+[pid 6352] post_close_hook : close 3
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=334)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=318)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=318)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_close_hook : close 4
+[pid 6352] post_openat_hook: open /usr/lib/ssl/openssl.cnf at fd 3
+[pid 6352] post_read_hook  : read 4096 bytes from fd 3
+[pid 6352] post_read_hook  : taint 0x55f8e09bf700 -- 0x55f8e09c0700
+[pid 6352] post_read_hook  : read 4096 bytes from fd 3
+[pid 6352] post_read_hook  : taint 0x55f8e09bf700 -- 0x55f8e09c0700
+[pid 6352] post_read_hook  : read 4096 bytes from fd 3
+[pid 6352] post_read_hook  : taint 0x55f8e09bf700 -- 0x55f8e09c0700
+[pid 6352] post_read_hook  : read 131 bytes from fd 3
+[pid 6352] post_read_hook  : taint 0x55f8e09bf700 -- 0x55f8e09bf783
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/locale-archive at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/share/locale/locale.alias at fd 3
+[pid 6352] post_read_hook  : read 2996 bytes from fd 3
+[pid 6352] post_read_hook  : taint 0x55f8e09c6660 -- 0x55f8e09c7214
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_IDENTIFICATION at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MEASUREMENT at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_TELEPHONE at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_ADDRESS at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_NAME at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_PAPER at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MESSAGES at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_MONETARY at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_COLLATE at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_TIME at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_NUMERIC at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /usr/lib/locale/C.utf8/LC_CTYPE at fd 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /etc/nsswitch.conf at fd 3
+[pid 6352] post_read_hook  : read 510 bytes from fd 3
+[pid 6352] post_read_hook  : taint 0x55f8e09c6660 -- 0x55f8e09c685e
+[pid 6352] post_close_hook : close 3
+[pid 6352] post_openat_hook: open /etc/passwd at fd 3
+[pid 6352] post_read_hook  : read 1630 bytes from fd 3
+[pid 6352] post_read_hook  : taint 0x55f8e09c6660 -- 0x55f8e09c6cbe
+[pid 6352] post_close_hook : close 3
+libdft_api.cpp:void sysenter_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):113: unknown syscall(num=318)
+libdft_api.cpp:void sysexit_save(LEVEL_VM::THREADID, LEVEL_VM::CONTEXT*, LEVEL_CORE::SYSCALL_STANDARD, VOID*):203: unknown syscall(num=-1)
+[pid 6352] post_close_hook : close 3
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[pid 6352] pre_sendto_hook : send 187 bytes 'POST / HTTP/1.1
+Host: localhost:9999
+User-Agent: curl/7.81.0
+Accept: */*
+Content-Length: 1825
+Content-Type: multipart/form-data; boundary=------------------------a0ba39e77f77eb9d
+
+' to sockfd 5
+[pid 6352] pre_sendto_hook : check taint 0x55f8e0a64990 -- 0x55f8e0a64a4b
+[pid 6352] pre_sendto_hook : OK
+[pid 6352] post_openat_hook: open /etc/passwd at fd 6
+[pid 6352] post_read_hook  : read 1630 bytes from fd 6
+[pid 6352] post_read_hook  : taint 0x55f8e0a64b83 -- 0x55f8e0a651e1
+[pid 6352] post_close_hook : close 6
+[pid 6352] pre_sendto_hook : send 1825 bytes '--------------------------a0ba39e77f77eb9d
+Content-Disposition: form-data; name="f"; filename="passwd"
+Content-Type: application/octet-stream
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:102:105::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:103:106:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+syslog:x:104:111::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:112:TPM software stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:113::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:108:114::/nonexistent:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:110:1::/var/cache/pollinate:/bin/false
+landscape:x:111:116::/var/lib/landscape:/usr/sbin/nologin
+ueno:x:1000:1000:,,,:/home/ueno:/bin/zsh
+
+--------------------------a0ba39e77f77eb9d--
+' to sockfd 5
+[pid 6352] pre_sendto_hook : check taint 0x55f8e0a64af0 -- 0x55f8e0a65211
+[pid 6352] alert           : address 0x55f8e0a64b83 is tainted
+[pid 6352] alert           : [91m!!!! ABORT !!!!    Data leak detected[0m
+make: *** [makefile.rules:100: test] Error 42
