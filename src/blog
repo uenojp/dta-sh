@@ -1,0 +1,8 @@
+[pid 6352] post_openat_hook: open /etc/passwd at fd 6
+[pid 6352] post_read_hook  : read 1630 bytes from fd 6
+[pid 6352] post_read_hook  : taint 0x55f8e0a64b83 -- 0x55f8e0a651e1
+[pid 6352] post_close_hook : close 6
+[pid 6352] pre_sendto_hook : send 1825 bytes to sockfd 5
+[pid 6352] pre_sendto_hook : check taint 0x55f8e0a64af0 -- 0x55f8e0a65211
+[pid 6352] alert           : address 0x55f8e0a64b83 is tainted
+[pid 6352] alert           : !!!! ABORT !!!!    Data leak detected
