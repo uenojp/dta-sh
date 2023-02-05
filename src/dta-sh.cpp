@@ -6,6 +6,9 @@
 // - dta-dataleak.cpp
 //      example code for chapter11 of https://practicalbinaryanalysis.com/
 
+#define DEBUG_PRINT
+#include "dta-sh.h"
+
 #include <set>
 
 // Intel Pin
@@ -16,8 +19,6 @@
 #include "libdft_api.h"
 #include "syscall_desc.h"
 
-#define DEBUG
-
 extern syscall_desc_t syscall_desc[SYSCALL_MAX];
 static const tag_traits<tag_t>::type tag = 1;
 // fdset stores the fd's(file discripters) of opened files. The fd stored in fdset is the target of
@@ -25,8 +26,9 @@ static const tag_traits<tag_t>::type tag = 1;
 static std::set<int> fdset;
 
 // alert aborts the program, called when a data leak is detected.
-void alert() {
-    fprintf(stderr, "\n\n!!!!ABORT!!!! detected data leak\n\n");
+static void alert(uintptr_t addr) {
+    DEBUG("address 0x%lx is tainted", addr);
+    DEBUG("\e[91m!!!! ABORT !!!!    Data leak detected\e[0m");
     exit(42);
 }
 
@@ -39,15 +41,13 @@ static void post_openat_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
+    DEBUG("open %s at fd %d", pathname, fd);
+
     // Exclude files with '.so' and '.so.' in the filename since dynamic linked binaries loads
     // shared libraries(.so) at runtime. Shared libraries do not need be taint.
     if (strstr(pathname, ".so") != NULL || strstr(pathname, ".so.") != NULL) {
         return;
     }
-
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: open %s at fd %d\n", __FUNCTION__, pathname, fd);
-#endif
 
     fdset.insert(fd);
 }
@@ -63,9 +63,7 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: read %zd bytes from fd %d\n", __FUNCTION__, nread, fd);
-#endif
+    DEBUG("read %zd bytes from fd %d", nread, fd);
 
     // If the fd is to be tracked(= fdset contins fd), taint bytes from buf to buf+nread-1.
     // Otherwise(= fdset do not contains fd), the memory area is overwritten even if it has been the
@@ -74,17 +72,13 @@ static void post_read_hook(THREADID tid, syscall_ctx_t* ctx) {
     // Note that you should not clean taints in close callback function becasue the read data will
     // continue to exist after it the file is closed.
     if (fdset.find(fd) != fdset.end()) {
+        DEBUG("taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
+        // NOTE: tagmap_setn taints [buf, buf+nread). Data at address buf+len is not tainted.
+        // see libdft64/src/tagmap.cpp
         tagmap_setn((uintptr_t)buf, nread, tag);
-#ifdef DEBUG
-        fprintf(stderr, "%-16s: taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
-                (uintptr_t)buf + nread);
-#endif
     } else {
+        DEBUG("clear taint 0x%lx -- 0x%lx", (uintptr_t)buf, (uintptr_t)buf + nread);
         tagmap_clrn((uintptr_t)buf, nread);
-#ifdef DEBUG
-        fprintf(stderr, "%-16s: clear taint 0x%lx -- 0x%lx\n", __FUNCTION__, (uintptr_t)buf,
-                (uintptr_t)buf + nread);
-#endif
     }
 }
 
@@ -95,25 +89,20 @@ static void pre_sendto_hook(THREADID tid, syscall_ctx_t* ctx) {
     const void* buf = (const void*)ctx->arg[SYSCALL_ARG1];
     const size_t len = (const size_t)ctx->arg[SYSCALL_ARG2];
 
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: send %zu bytes '%s' to sockfd %d\n", __FUNCTION__, len, (char*)buf,
-            sockfd);
-#endif
+    DEBUG("send %zu bytes '%s' to sockfd %d", len, (char*)buf, sockfd);
 
     // Check if each byte between address buf and buf+len is tainted.
     const uintptr_t start = (const uintptr_t)buf;
     const uintptr_t end = (const uintptr_t)buf + len;
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: check taint 0x%lx -- 0x%lx\n", __FUNCTION__, start, end);
-#endif
-    for (uintptr_t addr = start; addr <= end; addr++) {
+
+    DEBUG("check taint 0x%lx -- 0x%lx", start, end);
+
+    for (uintptr_t addr = start; addr < end; addr++) {
         if (tagmap_getb(addr) != 0) {
-            alert();
+            alert(addr);
         }
     }
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: OK\n", __FUNCTION__);
-#endif
+    DEBUG("OK");
 }
 
 // post_close_hook post-hooks close(2) to delete fd saved in post_openat_hook.
@@ -125,12 +114,28 @@ static void post_close_hook(THREADID tid, syscall_ctx_t* ctx) {
         return;
     }
 
-#ifdef DEBUG
-    fprintf(stderr, "%-16s: close %d\n", __FUNCTION__, fd);
-#endif
+    DEBUG("close %d", fd);
 
     if (likely(fdset.find(fd) != fdset.end())) {
         fdset.erase(fd);
+    }
+}
+
+// post_dup2_hook post-hooks dup2(2) to save the duplicated newfd.
+static void post_dup2_hook(THREADID tid, syscall_ctx_t* ctx) {
+    const int ret = (const int)ctx->ret;
+    const int oldfd = (const int)ctx->arg[SYSCALL_ARG0];
+    const int newfd = (const int)ctx->arg[SYSCALL_ARG1];
+
+    if (unlikely(ret < 0)) {
+        return;
+    }
+
+    DEBUG("duplicate %d and get %d\n", oldfd, newfd);
+
+    if (likely(fdset.find(oldfd) != fdset.end())) {
+        DEBUG("insert fd %d", newfd);
+        fdset.insert(newfd);
     }
 }
 
@@ -150,6 +155,7 @@ int main(int argc, char** argv) {
     syscall_set_post(&syscall_desc[__NR_read], post_read_hook);
     syscall_set_pre(&syscall_desc[__NR_sendto], pre_sendto_hook);
     syscall_set_post(&syscall_desc[__NR_close], post_close_hook);
+    syscall_set_post(&syscall_desc[__NR_dup2], post_dup2_hook);
 
     PIN_StartProgram();
 
