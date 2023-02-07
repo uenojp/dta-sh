@@ -14,5 +14,7 @@
         fprintf(stderr, "\n");                                       \
     } while (0)
 #else
-#define DEBUG(format, ...)
+#define DEBUG(format, ...) \
+    do {                   \
+    } while (0)
 #endif
