@@ -3,13 +3,17 @@
 set -eu
 
 # Install dependencies.
+#   build-essential gcc, make, etc...
+#   curl            curl command
+#   g++-multilib    to use 32bit binary with pin
+#   gcc-multilib    same as above
+#   python3         for http server
 sudo apt install \
     build-essential \
     curl \
     g++-multilib \
     gcc-multilib \
     python3 \
-    wget \
     ;
 
 # Extract Intel Pin.
@@ -35,4 +39,3 @@ make -j"$(nproc)" || true
 echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope > /dev/null
 
 echo -e "\n\nRun \033[1msource env.init\033[0m\n"
-
