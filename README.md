@@ -31,16 +31,20 @@ python3 server.py &
 cd src
 make
 
-# デモを実行(デフォルトでは`../script/default.sh`が実行)
+# デモを実行
 make demo
+```
+ログがたくさん出て、最終的に`[pid 93112] alert           : !!!! ABORT !!!!    Data leak detected`と出力されたらこのデモは成功。
+うまく行かない場合は[FAQ](#FAQ)を参照。
 
+`make demo`を実行した際、デフォルトでは`../script/default.sh`が使用される。
+情報漏洩を行うスクリプトは他にも`script/`下にあり、`SCRIPT=<スクリプトのパス>`を指定することでそのスクリプトを使用できる。
+```bash
 # スクリプトを指定してデモを実行
 make demo SCRIPT=../script/pipeline.sh
 # or
 make demo SCRIPT=pipeline.sh
 ```
-ログがたくさん出て、最終的に`[pid 93112] alert           : !!!! ABORT !!!!    Data leak detected`と出力されたらこのデモは成功。
-うまく行かない場合は[FAQ](#FAQ)を参照。
 
 ### dta-shを使わない場合
 作成したツール dta-sh を使わない場合どうなるか確認。
