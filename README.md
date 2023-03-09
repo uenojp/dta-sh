@@ -31,8 +31,13 @@ python3 server.py &
 cd src
 make
 
-# デモを実行
-make test
+# デモを実行(デフォルトでは`../script/default.sh`が実行)
+make demo
+
+# スクリプトを指定してデモを実行
+make demo SCRIPT=../script/pipeline.sh
+# or
+make demo SCRIPT=pipeline.sh
 ```
 ログがたくさん出て、最終的に`[pid 93112] alert           : !!!! ABORT !!!!    Data leak detected`と出力されたらこのデモは成功。
 うまく行かない場合は[FAQ](#FAQ)を参照。
@@ -49,14 +54,26 @@ make test
 ## 各ディレクトリ・ファイルの説明
 ```
 .
-├── env.init    # 環境変数(PIN_ROOT)の設定
-├── libdft64    # 動的テイント解析ライブラリ
-├── pin-3.20-98437-gf02b61307-gcc-linux         # libdft64の依存ライブラリ
+├── pin-3.20-98437-gf02b61307-gcc-linux/        # libdft64の依存ライブラリ
 ├── pin-3.20-98437-gf02b61307-gcc-linux.tar.gz  # ↑の圧縮ファイル
+├── libdft64/   # 動的テイント解析ライブラリ
 ├── README.md   # このファイル
+├── env.init    # 環境変数(PIN_ROOT)の設定
+├── script/                         # 評価用のスクリプト
+│   ├── default.sh                  # 評価基準
+│   ├── alias.sh                    # エイリアス
+│   ├── variable-alias.sh           # 変数を使ったエイリアス
+│   ├── ansi-c-quoting.sh           # 難読化：ANSI-C Quoting(Bashの機能)
+│   ├── bashfuscator.sh             # 難読化：Bashfuscator(サイズ小)
+│   ├── long-bashfuscator.sh        # 難読化：Bashfuscator(サイズ大)
+│   ├── command-substitution-1.sh   # コマンド置換(変数経由)
+│   ├── command-substitution-2.sh   # コマンド置換(引数へ直接)
+│   ├── pipeline.sh                 # パイプ
+│   ├── process-substitution.sh     # プロセス置換
+│   └── redirecting-input.sh        # 入力リダイレクト
 ├── server.py   # POSTリクエストを受け取るHTTPサーバ
 ├── setup.sh    # セットアップファイル
-└── src # ソースコード
+└── src/                # ソースコード
     ├── dta-sh.cpp      # ツールの本体
     ├── dta-sh.h        # ヘッダファイル
     ├── Makefile        # ビルドスクリプト
